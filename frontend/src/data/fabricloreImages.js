@@ -1,0 +1,31 @@
+export const FABRICLORE_IMAGES = {
+  hero: '/fabriclore/slider1.webp',
+  heroAlt: '/fabriclore/slider-2.webp',
+  madeToOrder: '/fabriclore/slider-11-.png',
+  dyed: '/fabriclore/slider-10-.png',
+  dyeable: '/fabriclore/1-1-3fed99.webp',
+  fabricRolls: '/fabriclore/1-6-.webp',
+  flowingFabric: '/fabriclore/1-copy.webp',
+  fabricBanner: '/fabriclore/banner-5-.webp',
+  fabricDetail: '/fabriclore/3f47511.webp',
+  personFabric: '/fabriclore/1-4-.webp',
+  dashboard: '/fabriclore/slider-9-8114db.png',
+  client: '/fabriclore/client--10-.webp',
+  client2: '/fabriclore/client-3-.webp',
+  client3: '/fabriclore/client-2-.png',
+  brand1: '/fabriclore/BRAND-3-.webp',
+  brand2: '/fabriclore/BRAND-OWNER.webp',
+  brand3: '/fabriclore/BRAND-2-.webp',
+  brand4: '/fabriclore/BRAND-OWNER-2-.webp',
+}
+
+export const FABRICLORE_FABRIC_IMAGES = [
+  '/fabriclore/3f47511.webp',
+  '/fabriclore/slider1.webp',
+  '/fabriclore/slider-2.webp',
+  '/fabriclore/slider-11-.png',
+  '/fabriclore/slider-10-.png',
+  '/fabriclore/1-1-3fed99.webp',
+  '/fabriclore/1-6-.webp',
+  '/fabriclore/1-copy.webp',
+]

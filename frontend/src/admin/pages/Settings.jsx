@@ -1,0 +1,25 @@
+import { useEffect, useState } from 'react'
+import { Save, Settings as SettingsIcon } from 'lucide-react'
+import api from '../../config/api'
+import AdminLayout from '../components/AdminLayout'
+import Toast from '../components/Toast'
+
+const initial = { company: { name:'', tagline:'', email:'', phones:['',''], whatsapp:'', hours:'', address:{line1:'',line2:'',city:'',state:'',pin:'',country:'India'}, socials:{instagram:'https://www.instagram.com/jkw.textile/',facebook:'https://www.facebook.com/people/JKW-Textile/61592154050319/'}}, hero:{eyebrow:'',title:'',description:''}, resources:{enabled:true,label:'',description:''} }
+export default function Settings(){
+ const [form,setForm]=useState(initial); const [loading,setLoading]=useState(true); const [saving,setSaving]=useState(false); const [toast,setToast]=useState(null)
+ useEffect(()=>{api.get('/settings').then(({data})=>setForm(data.settings)).catch(()=>setToast({type:'error',message:'Failed to load settings'})).finally(()=>setLoading(false))},[])
+ const set=(path,value)=>setForm(f=>{const n=structuredClone(f); let o=n; const keys=path.split('.'); keys.slice(0,-1).forEach(k=>o=o[k]); o[keys.at(-1)]=value; return n})
+ async function save(e){e.preventDefault();setSaving(true);try{await api.put('/settings',form);setToast({type:'success',message:'Site settings saved'})}catch(err){setToast({type:'error',message:err.response?.data?.message||'Failed to save settings'})}finally{setSaving(false)}}
+ if(loading)return <AdminLayout><p className="text-slate-400">Loading settings...</p></AdminLayout>
+ return <AdminLayout><div className="flex items-center gap-3 mb-6"><SettingsIcon size={24}/><div><h1 className="font-bold text-2xl text-ink">Site Settings</h1><p className="text-sm text-slate-500">Control key website content, contact details and the floating CTA.</p></div></div>
+ <form onSubmit={save} className="space-y-5 max-w-5xl">
+  <Card title="Company & Contact"><div className="grid md:grid-cols-2 gap-4"><Field label="Company name" value={form.company.name} onChange={v=>set('company.name',v)}/><Field label="Email" value={form.company.email} onChange={v=>set('company.email',v)}/><Field label="Phone 1" value={form.company.phones?.[0]||''} onChange={v=>set('company.phones.0',v)}/><Field label="Phone 2" value={form.company.phones?.[1]||''} onChange={v=>set('company.phones.1',v)}/><Field label="WhatsApp number (international format)" value={form.company.whatsapp} onChange={v=>set('company.whatsapp',v)}/><Field label="Business hours" value={form.company.hours} onChange={v=>set('company.hours',v)}/></div></Card>
+    <Card title="Address"><p className="text-xs text-slate-400 mb-4">This address is used on the Contact page and footer. Changes here update the public website after saving.</p><div className="grid md:grid-cols-2 gap-4">{['line1','line2','city','state','pin','country'].map(k=><Field key={k} label={k} value={form.company.address?.[k]||''} onChange={v=>set(`company.address.${k}`,v)}/>)}</div></Card>
+    <Card title="Social Profiles"><div className="grid md:grid-cols-2 gap-4"><Field label="Instagram URL" value={form.company.socials?.instagram||''} onChange={v=>set('company.socials.instagram',v)}/><Field label="Facebook URL" value={form.company.socials?.facebook||''} onChange={v=>set('company.socials.facebook',v)}/></div></Card>
+  <Card title="Homepage"><Field label="Eyebrow" value={form.hero.eyebrow} onChange={v=>set('hero.eyebrow',v)}/><Field label="Hero title" value={form.hero.title} onChange={v=>set('hero.title',v)}/><label className="flex flex-col gap-1.5 mt-4"><span className="text-xs font-medium text-slate-500">Hero description</span><textarea rows="4" value={form.hero.description} onChange={e=>set('hero.description',e.target.value)} className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm"/></label></Card>
+  <Card title="Resources"><label className="flex items-center gap-2 text-sm mb-4"><input type="checkbox" checked={!!form.resources.enabled} onChange={e=>set('resources.enabled',e.target.checked)}/> Show Resources option</label><div className="grid md:grid-cols-2 gap-4"><Field label="Label" value={form.resources.label} onChange={v=>set('resources.label',v)}/><Field label="Description" value={form.resources.description} onChange={v=>set('resources.description',v)}/></div></Card>
+  <button disabled={saving} className="inline-flex items-center gap-2 bg-ink text-white rounded-lg px-5 py-3 text-sm font-medium hover:bg-[#15155A] disabled:opacity-60"><Save size={16}/>{saving?'Saving...':'Save All Changes'}</button>
+ </form><Toast toast={toast} onClose={()=>setToast(null)}/></AdminLayout>
+}
+function Card({title,children}){return <section className="bg-white border border-slate-200 rounded-xl p-6"><h2 className="font-semibold text-ink mb-5">{title}</h2>{children}</section>}
+function Field({label,value,onChange}){return <label className="flex flex-col gap-1.5"><span className="text-xs font-medium text-slate-500">{label}</span><input value={value??''} onChange={e=>onChange(e.target.value)} className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-slate-400"/></label>}
