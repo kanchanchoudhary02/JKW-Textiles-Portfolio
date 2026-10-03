@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import { ShieldCheck, TrendingUp, Star, Plus } from 'lucide-react'
-import { TRUST_STATS, HERO_TRUST } from '../data/heroTrust'
-import { CLIENT_LOGO_TILES } from '../data/services'
-import { useSiteSettings } from '../context/SiteSettingsContext'
+import { TRUST_STATS } from '../data/heroTrust'
 
 const BADGES = [
   { label: 'Reliability', icon: ShieldCheck, color: 'text-[#3B6FB6] bg-[#3B6FB6]/10' },
@@ -11,7 +9,6 @@ const BADGES = [
 ]
 
 export default function TrustSection() {
-  const { media } = useSiteSettings()
   return (
     <section className="py-16 md:py-24">
       <div className="container max-w-container">
@@ -54,27 +51,6 @@ export default function TrustSection() {
           ))}
         </div>
 
-        <div className="pt-14 md:pt-16">
-          <p className="eyebrow-slash mb-6">Partners In Progress</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
-            {CLIENT_LOGO_TILES.map((tile, i) => (
-              <motion.div
-                key={tile.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: (i % 4) * 0.06 }}
-                className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${tile.gradient} flex items-center justify-center px-4`}
-              >
-                {media?.[`client-logo-${i + 1}`]?.url ? (
-                  <img src={media[`client-logo-${i + 1}`].url} alt={`Client ${i + 1}`} className="max-h-16 max-w-[80%] object-contain" loading="lazy" />
-                ) : (
-                  <span className="text-white/70 font-mono text-[10px] uppercase tracking-widest text-center">Add client logo from Admin</span>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   )
