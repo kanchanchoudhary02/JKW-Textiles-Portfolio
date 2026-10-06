@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -7,7 +8,10 @@ const sharp = require('sharp');
 
 const connectDB = require('./config/db');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
-const { getProductImage, getCatalogThumbnail } = require('./controllers/productController');
+const {
+  getProductImage,
+  getCatalogThumbnail,
+} = require('./controllers/productController');
 
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
@@ -16,6 +20,11 @@ const dashboardRoutes = require('./routes/dashboardRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
 const mediaRoutes = require('./routes/mediaRoutes');
 
+
+/* =========================================================
+   SEED HOMEPAGE MEDIA
+   ========================================================= */
+
 async function seedHomeMediaIfNeeded() {
   const fs = require('fs');
   const SiteMedia = require('./models/SiteMedia');
@@ -23,27 +32,51 @@ async function seedHomeMediaIfNeeded() {
   const ProductImage = require('./models/ProductImage');
 
   const VERSION = 2;
-  const keys = Array.from({ length: 10 }, (_, i) => `home-gallery-${i + 1}`);
+  const keys = Array.from(
+    { length: 10 },
+    (_, i) => `home-gallery-${i + 1}`
+  );
 
-  const settings = await SiteSettings.findOne({ key: 'global' }).lean();
+  const settings = await SiteSettings.findOne({
+    key: 'global',
+  }).lean();
 
   if (settings?.homeMediaVersion === VERSION) return;
 
-  const mediaDir = path.join(__dirname, '..', 'frontend', 'public', 'home-gallery');
+  const mediaDir = path.join(
+    __dirname,
+    '..',
+    'frontend',
+    'public',
+    'home-gallery'
+  );
 
   if (!fs.existsSync(mediaDir)) return;
 
-  const oldDocs = await SiteMedia.find({ key: { $in: keys } }).lean();
-  const oldIds = oldDocs.map((doc) => doc.imageId).filter(Boolean);
+  const oldDocs = await SiteMedia.find({
+    key: { $in: keys },
+  }).lean();
+
+  const oldIds = oldDocs
+    .map((doc) => doc.imageId)
+    .filter(Boolean);
 
   if (oldIds.length) {
-    await ProductImage.deleteMany({ _id: { $in: oldIds } }).catch(() => {});
+    await ProductImage.deleteMany({
+      _id: { $in: oldIds },
+    }).catch(() => {});
   }
 
-  await SiteMedia.deleteMany({ key: { $in: keys } });
+  await SiteMedia.deleteMany({
+    key: { $in: keys },
+  });
 
   for (let i = 0; i < keys.length; i += 1) {
-    const filename = `home-textile-${String(i + 1).padStart(2, '0')}.webp`;
+    const filename = `home-textile-${String(i + 1).padStart(
+      2,
+      '0'
+    )}.webp`;
+
     const filePath = path.join(mediaDir, filename);
 
     if (!fs.existsSync(filePath)) continue;
@@ -56,7 +89,10 @@ async function seedHomeMediaIfNeeded() {
 
     await SiteMedia.create({
       key: keys[i],
-      label: `Home — Textile Gallery ${String(i + 1).padStart(2, '0')}`,
+      label: `Home — Textile Gallery ${String(i + 1).padStart(
+        2,
+        '0'
+      )}`,
       group: 'Home Page',
       alt: 'JKW Textiles fabric collection',
       url: `/api/images/${image._id}`,
@@ -66,12 +102,26 @@ async function seedHomeMediaIfNeeded() {
 
   await SiteSettings.findOneAndUpdate(
     { key: 'global' },
-    { $set: { homeMediaVersion: VERSION } },
-    { upsert: true, setDefaultsOnInsert: true }
+    {
+      $set: {
+        homeMediaVersion: VERSION,
+      },
+    },
+    {
+      upsert: true,
+      setDefaultsOnInsert: true,
+    }
   );
 
-  console.log('Seeded JKW homepage textile gallery media.');
+  console.log(
+    'Seeded JKW homepage textile gallery media.'
+  );
 }
+
+
+/* =========================================================
+   SEED MEGA MENU MEDIA
+   ========================================================= */
 
 async function seedMegaMenuMediaIfNeeded() {
   const SiteMedia = require('./models/SiteMedia');
@@ -81,39 +131,108 @@ async function seedMegaMenuMediaIfNeeded() {
   const VERSION = 1;
 
   const items = [
-    ['mega-cotton', 'Navigation — Dyeable / Cotton', 'dyeable-cotton.jpg'],
-    ['mega-linen', 'Navigation — Dyeable / Linen', 'dyeable-linen.jpg'],
-    ['mega-rayon', 'Navigation — Dyeable / Rayon', 'dyeable-rayon.jpg'],
-    ['mega-reactive-dyed', 'Navigation — Dyed / Reactive Dyed', 'yarn-reactive-dyed.jpg'],
-    ['mega-yarn-dyed', 'Navigation — Dyed / Yarn Dyed', 'yarn-dyed.jpg'],
-    ['mega-custom-colour', 'Navigation — Dyed / Custom Colour', 'custom-colour.jpg'],
-    ['mega-block-printing', 'Navigation — Printing / Block Printing', 'block-printing.jpg'],
-    ['mega-digital-printing', 'Navigation — Printing / Digital Printing', 'digital-printing.jpg'],
-    ['mega-custom-dyeing', 'Navigation — Printing / Custom Dyeing', 'custom-dyeing.jpg'],
-    ['mega-bulk-production', 'Navigation — Manufacturing / Bulk Production', 'bulk-production.jpg'],
-    ['mega-custom-development', 'Navigation — Manufacturing / Custom Development', 'custom-development.jpg'],
-    ['mega-sourcing-support', 'Navigation — Manufacturing / Sourcing Support', 'sourcing-support.jpg'],
+    [
+      'mega-cotton',
+      'Navigation — Dyeable / Cotton',
+      'dyeable-cotton.jpg',
+    ],
+    [
+      'mega-linen',
+      'Navigation — Dyeable / Linen',
+      'dyeable-linen.jpg',
+    ],
+    [
+      'mega-rayon',
+      'Navigation — Dyeable / Rayon',
+      'dyeable-rayon.jpg',
+    ],
+    [
+      'mega-reactive-dyed',
+      'Navigation — Dyed / Reactive Dyed',
+      'yarn-reactive-dyed.jpg',
+    ],
+    [
+      'mega-yarn-dyed',
+      'Navigation — Dyed / Yarn Dyed',
+      'yarn-dyed.jpg',
+    ],
+    [
+      'mega-custom-colour',
+      'Navigation — Dyed / Custom Colour',
+      'custom-colour.jpg',
+    ],
+    [
+      'mega-block-printing',
+      'Navigation — Printing / Block Printing',
+      'block-printing.jpg',
+    ],
+    [
+      'mega-digital-printing',
+      'Navigation — Printing / Digital Printing',
+      'digital-printing.jpg',
+    ],
+    [
+      'mega-custom-dyeing',
+      'Navigation — Printing / Custom Dyeing',
+      'custom-dyeing.jpg',
+    ],
+    [
+      'mega-bulk-production',
+      'Navigation — Manufacturing / Bulk Production',
+      'bulk-production.jpg',
+    ],
+    [
+      'mega-custom-development',
+      'Navigation — Manufacturing / Custom Development',
+      'custom-development.jpg',
+    ],
+    [
+      'mega-sourcing-support',
+      'Navigation — Manufacturing / Sourcing Support',
+      'sourcing-support.jpg',
+    ],
   ];
 
-  const settings = await SiteSettings.findOne({ key: 'global' }).lean();
+  const settings = await SiteSettings.findOne({
+    key: 'global',
+  }).lean();
 
   if (settings?.megaMenuMediaVersion === VERSION) return;
 
   const keys = items.map(([key]) => key);
 
-  const oldDocs = await SiteMedia.find({ key: { $in: keys } }).lean();
-  const oldIds = oldDocs.map((doc) => doc.imageId).filter(Boolean);
+  const oldDocs = await SiteMedia.find({
+    key: { $in: keys },
+  }).lean();
+
+  const oldIds = oldDocs
+    .map((doc) => doc.imageId)
+    .filter(Boolean);
 
   if (oldIds.length) {
-    await ProductImage.deleteMany({ _id: { $in: oldIds } }).catch(() => {});
+    await ProductImage.deleteMany({
+      _id: { $in: oldIds },
+    }).catch(() => {});
   }
 
-  await SiteMedia.deleteMany({ key: { $in: keys } });
+  await SiteMedia.deleteMany({
+    key: { $in: keys },
+  });
 
-  const mediaDir = path.join(__dirname, '..', 'frontend', 'public', 'dropdown-menu');
+  const mediaDir = path.join(
+    __dirname,
+    '..',
+    'frontend',
+    'public',
+    'dropdown-menu'
+  );
 
   for (const [key, label, filename] of items) {
-    const filePath = path.join(mediaDir, filename);
+    const filePath = path.join(
+      mediaDir,
+      filename
+    );
+
     const fs = require('fs');
 
     if (!fs.existsSync(filePath)) continue;
@@ -136,12 +255,26 @@ async function seedMegaMenuMediaIfNeeded() {
 
   await SiteSettings.findOneAndUpdate(
     { key: 'global' },
-    { $set: { megaMenuMediaVersion: VERSION } },
-    { upsert: true, setDefaultsOnInsert: true }
+    {
+      $set: {
+        megaMenuMediaVersion: VERSION,
+      },
+    },
+    {
+      upsert: true,
+      setDefaultsOnInsert: true,
+    }
   );
 
-  console.log('Seeded new JKW navigation dropdown images.');
+  console.log(
+    'Seeded new JKW navigation dropdown images.'
+  );
 }
+
+
+/* =========================================================
+   PREPARE CRITICAL IMAGE VARIANTS
+   ========================================================= */
 
 async function prepareCriticalImageVariants() {
   const SiteMedia = require('./models/SiteMedia');
@@ -174,7 +307,10 @@ async function prepareCriticalImageVariants() {
   for (const item of media) {
     if (!item.imageId) continue;
 
-    const field = item.key === 'home-hero' ? 'heroData' : 'sectionData';
+    const field =
+      item.key === 'home-hero'
+        ? 'heroData'
+        : 'sectionData';
 
     const image = await ProductImage.findOne({
       _id: item.imageId,
@@ -224,7 +360,9 @@ async function prepareCriticalImageVariants() {
         $set: {
           [field]: responsiveData,
           [`${
-            item.key === 'home-hero' ? 'hero' : 'section'
+            item.key === 'home-hero'
+              ? 'hero'
+              : 'section'
           }ContentType`]: 'image/webp',
         },
       }
@@ -234,16 +372,25 @@ async function prepareCriticalImageVariants() {
   }
 
   if (generated) {
-    console.log(`Prepared ${generated} critical image variants.`);
+    console.log(
+      `Prepared ${generated} critical image variants.`
+    );
   }
 }
+
+
+/* =========================================================
+   MIGRATE COMPANY ADDRESS
+   ========================================================= */
 
 async function migrateCompanyAddressIfNeeded() {
   const SiteSettings = require('./models/SiteSettings');
 
   const ADDRESS = {
-    line1: 'JKW Textiles Pvt Ltd, Plot No. X-66A, Shyam Market, First Floor',
-    line2: 'Near Mansarovar Flyover, Mahaveer Nagar, New Sanganer Road',
+    line1:
+      'JKW Textiles Pvt Ltd, Plot No. X-66A, Shyam Market, First Floor',
+    line2:
+      'Near Mansarovar Flyover, Mahaveer Nagar, New Sanganer Road',
     city: 'Sanganer, Jaipur',
     state: 'Rajasthan',
     pin: '302029',
@@ -265,7 +412,8 @@ async function migrateCompanyAddressIfNeeded() {
     return;
   }
 
-  const current = settings.company?.address || {};
+  const current =
+    settings.company?.address || {};
 
   const isPlaceholder =
     !current.line1 ||
@@ -280,6 +428,11 @@ async function migrateCompanyAddressIfNeeded() {
     );
   }
 }
+
+
+/* =========================================================
+   SEED CATALOG
+   ========================================================= */
 
 async function seedCatalogIfMissing() {
   const Product = require('./models/Product');
@@ -297,7 +450,12 @@ async function seedCatalogIfMissing() {
     fs.readFileSync(manifestPath, 'utf8')
   );
 
-  if (!Array.isArray(manifest) || manifest.length === 0) return;
+  if (
+    !Array.isArray(manifest) ||
+    manifest.length === 0
+  ) {
+    return;
+  }
 
   await Product.deleteMany({
     sku: {
@@ -309,11 +467,14 @@ async function seedCatalogIfMissing() {
     },
   });
 
-  const individualCount = await Product.countDocuments({
-    sku: /^JKW-ITEM-/,
-  });
+  const individualCount =
+    await Product.countDocuments({
+      sku: /^JKW-ITEM-/,
+    });
 
-  if (individualCount >= manifest.length) return;
+  if (individualCount >= manifest.length) {
+    return;
+  }
 
   await Product.deleteMany({
     sku: /^JKW-ITEM-/,
@@ -326,16 +487,30 @@ async function seedCatalogIfMissing() {
 
     return {
       name: item.name,
+
       description: `${item.fabricType} fabric with a ${item.designType.toLowerCase()} design in ${item.colorName}. Classified from the supplied JKW Textiles swatch photo.`,
+
       category: item.fabricType,
+
       subcategory: item.designType,
+
       spec: `Fabric: ${item.fabricType} | Design: ${item.designType} | Colour: ${item.colorName}`,
+
       stock: 0,
-      sku: `JKW-ITEM-${String(item.index).padStart(3, '0')}`,
+
+      sku: `JKW-ITEM-${String(item.index).padStart(
+        3,
+        '0'
+      )}`,
+
       featured: item.index <= 8,
+
       status: 'active',
+
       tags: item.tags,
+
       images: [image],
+
       colors: [
         {
           name: item.colorName,
@@ -355,10 +530,16 @@ async function seedCatalogIfMissing() {
   );
 }
 
-const app = express();
 
 /* =========================================================
-   CORS CONFIGURATION
+   EXPRESS APP
+   ========================================================= */
+
+const app = express();
+
+
+/* =========================================================
+   CORS CONFIGURATION - FIXED
    ========================================================= */
 
 const allowedOrigins = [
@@ -370,45 +551,79 @@ const allowedOrigins = [
   'http://localhost:3000',
 ];
 
-app.use(
-  cors({
-    origin(origin, callback) {
-      // Allow requests without an Origin header
-      // (Postman, server-to-server, health checks, etc.)
-      if (!origin) {
-        return callback(null, true);
-      }
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log(
+      'Incoming CORS Origin:',
+      origin
+    );
 
-      const cleanOrigin = origin.replace(/\/$/, '');
+    // Allow requests without Origin header
+    // Example: Postman, server-to-server, health checks
+    if (!origin) {
+      return callback(null, true);
+    }
 
-      if (allowedOrigins.includes(cleanOrigin)) {
-        return callback(null, true);
-      }
+    const cleanOrigin = origin
+      .trim()
+      .replace(/\/$/, '');
 
-      console.error('Blocked CORS origin:', origin);
-
-      return callback(
-        new Error(`Not allowed by CORS: ${origin}`)
+    if (
+      allowedOrigins.includes(cleanOrigin)
+    ) {
+      console.log(
+        'CORS Allowed:',
+        cleanOrigin
       );
-    },
 
-    credentials: true,
+      return callback(null, true);
+    }
 
-    methods: [
-      'GET',
-      'POST',
-      'PUT',
-      'PATCH',
-      'DELETE',
-      'OPTIONS',
-    ],
+    console.error(
+      'CORS BLOCKED:',
+      cleanOrigin
+    );
 
-    allowedHeaders: [
-      'Content-Type',
-      'Authorization',
-    ],
-  })
-);
+    return callback(
+      new Error(
+        `Not allowed by CORS: ${cleanOrigin}`
+      )
+    );
+  },
+
+  credentials: true,
+
+  methods: [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+  ],
+
+  optionsSuccessStatus: 204,
+};
+
+
+/* =========================================================
+   MAIN CORS MIDDLEWARE
+   ========================================================= */
+
+app.use(cors(corsOptions));
+
+
+/* =========================================================
+   PREFLIGHT / OPTIONS REQUESTS
+   ========================================================= */
+
+app.options('*', cors(corsOptions));
+
 
 /* =========================================================
    BASIC MIDDLEWARE
@@ -427,18 +642,25 @@ app.use(
   })
 );
 
-if (process.env.NODE_ENV !== 'production') {
+if (
+  process.env.NODE_ENV !== 'production'
+) {
   app.use(morgan('dev'));
 }
+
 
 /* =========================================================
    FAVICON
    ========================================================= */
 
 // Prevent unnecessary "Route not found: /favicon.ico"
-app.get('/favicon.ico', (req, res) => {
-  res.status(204).end();
-});
+app.get(
+  '/favicon.ico',
+  (req, res) => {
+    res.status(204).end();
+  }
+);
+
 
 /* =========================================================
    STATIC FILES
@@ -455,45 +677,59 @@ app.use(
   )
 );
 
+
 // Catalogue thumbnail endpoint
 app.get(
   '/catalog-images/:filename',
   getCatalogThumbnail
 );
 
+
 // Bundled JKW textile catalogue photos
 app.use(
   '/catalog-images',
   express.static(
-    path.join(__dirname, 'catalog-images'),
+    path.join(
+      __dirname,
+      'catalog-images'
+    ),
     {
       maxAge: '30d',
     }
   )
 );
 
+
 /* =========================================================
    BASIC API ROUTES
    ========================================================= */
 
-app.get('/', (req, res) => {
-  res.json({
-    success: true,
-    message: 'JKW Textiles API is running',
-  });
-});
+app.get(
+  '/',
+  (req, res) => {
+    res.json({
+      success: true,
+      message:
+        'JKW Textiles API is running',
+    });
+  }
+);
 
-app.get('/api/health', (req, res) => {
-  res.json({
-    success: true,
-    message: 'API is running',
-  });
-});
+app.get(
+  '/api/health',
+  (req, res) => {
+    res.json({
+      success: true,
+      message: 'API is running',
+    });
+  }
+);
 
 app.get(
   '/api/images/:id',
   getProductImage
 );
+
 
 /* =========================================================
    API ROUTES
@@ -529,53 +765,63 @@ app.use(
   mediaRoutes
 );
 
+
 /* =========================================================
    ERROR HANDLING
    ========================================================= */
 
 app.use(notFound);
+
 app.use(errorHandler);
+
 
 /* =========================================================
    SERVER START
    ========================================================= */
 
-const PORT = process.env.PORT || 5000;
+const PORT =
+  process.env.PORT || 5000;
 
 connectDB().then(async () => {
-  await seedCatalogIfMissing().catch((err) =>
-    console.error(
-      'Catalog auto-import skipped:',
-      err.message
-    )
+
+  await seedCatalogIfMissing().catch(
+    (err) =>
+      console.error(
+        'Catalog auto-import skipped:',
+        err.message
+      )
   );
 
-  await seedHomeMediaIfNeeded().catch((err) =>
-    console.error(
-      'Homepage media seed skipped:',
-      err.message
-    )
+  await seedHomeMediaIfNeeded().catch(
+    (err) =>
+      console.error(
+        'Homepage media seed skipped:',
+        err.message
+      )
   );
 
-  await seedMegaMenuMediaIfNeeded().catch((err) =>
-    console.error(
-      'Dropdown media seed skipped:',
-      err.message
-    )
+  await seedMegaMenuMediaIfNeeded().catch(
+    (err) =>
+      console.error(
+        'Dropdown media seed skipped:',
+        err.message
+      )
   );
 
-  await prepareCriticalImageVariants().catch((err) =>
-    console.error(
-      'Critical image optimization skipped:',
-      err.message
-    )
+  await prepareCriticalImageVariants().catch(
+    (err) =>
+      console.error(
+        'Critical image optimization skipped:',
+        err.message
+      )
   );
 
-  await migrateCompanyAddressIfNeeded().catch((err) =>
-    console.error(
-      'Company address migration skipped:',
-      err.message
-    )
+  await migrateCompanyAddressIfNeeded().catch(
+    (err) =>
+      console.error(
+        'Company address migration skipped:',
+        err.message
+      )
   );
 
   app.listen(
