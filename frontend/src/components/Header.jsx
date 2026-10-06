@@ -5,6 +5,7 @@ import { Menu, X, Search, FileText, Phone, ChevronDown, ArrowUpRight } from 'luc
 import Logo from './Logo'
 import { NAV_LINKS, SIMPLE_NAV_LINKS, MEGA_MENU } from '../data/siteData'
 import { useSiteSettings } from '../context/SiteSettingsContext'
+import { imageVariantUrl } from '../utils/imageUrl'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -96,7 +97,7 @@ export default function Header() {
                             </div>
 
                             <div className="col-span-9 grid grid-cols-3 gap-5">
-                              {mega.items.map((item) => (
+                              {mega.items.map((item, imageIndex) => (
                                 <Link
                                   key={item.label}
                                   to={item.to}
@@ -104,7 +105,21 @@ export default function Header() {
                                   className="group block"
                                 >
                                   <div className="relative aspect-[1.35/1] overflow-hidden rounded-[24px] bg-cream">
-                                    <img src={media?.[item.key]?.url || item.image} alt={item.label} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                    <img
+                                      src={imageVariantUrl(media?.[item.key]?.url || item.image, 'section')}
+                                      alt={item.label}
+                                      width={900}
+                                      height={667}
+                                      loading="eager"
+                                      decoding="async"
+                                      fetchPriority={imageIndex === 0 ? 'high' : 'auto'}
+                                      onError={(event) => {
+                                        if (event.currentTarget.dataset.fallbackApplied) return
+                                        event.currentTarget.dataset.fallbackApplied = 'true'
+                                        event.currentTarget.src = item.image
+                                      }}
+                                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
                                     <div className="absolute bottom-4 left-4 right-4 text-white">
                                       <p className="font-display font-bold text-xl">{item.label}</p>

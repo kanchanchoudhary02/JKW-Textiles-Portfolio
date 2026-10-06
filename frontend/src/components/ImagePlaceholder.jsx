@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { ImageIcon } from 'lucide-react'
 import { FABRICLORE_IMAGES } from '../data/fabricloreImages'
 import { useSiteSettings } from '../context/SiteSettingsContext'
+import { imageVariantUrl } from '../utils/imageUrl'
 
 const imageByLabel = (label = '') => {
   const l = label.toLowerCase()
@@ -34,15 +36,49 @@ const imageByLabel = (label = '') => {
   return { key: null, fallback: null }
 }
 
-export default function ImagePlaceholder({ label = 'Replace with photography', className = '', dark = false, image = null }) {
+export default function ImagePlaceholder({
+  label = 'Replace with photography',
+  alt = label,
+  className = '',
+  dark = false,
+  image = null,
+  fallback = null,
+  loading = 'lazy',
+  fetchPriority = 'auto',
+  width,
+  height,
+  sizes,
+  srcSet,
+  variant = 'section',
+}) {
   const { media } = useSiteSettings()
+  const [loadedSources, setLoadedSources] = useState(() => new Set())
+  const [failedSources, setFailedSources] = useState(() => new Set())
   const mapping = imageByLabel(label)
   const src = image || media?.[mapping.key]?.url || mapping.fallback
+  const fallbackSrc = fallback || mapping.fallback
+  const requestedSrc = imageVariantUrl(src, variant)
+  const fallbackVariantSrc = imageVariantUrl(fallbackSrc, variant)
+  const displaySrc = failedSources.has(requestedSrc) ? fallbackVariantSrc : requestedSrc
+  const displayFailed = !displaySrc || failedSources.has(displaySrc)
 
-  if (src) {
+  if (!displayFailed) {
     return (
-      <div className={`relative overflow-hidden ${className}`} role="img" aria-label={label}>
-        <img src={src} alt={label} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]" loading="lazy" />
+      <div className={`relative overflow-hidden ${dark ? 'bg-ink' : 'bg-cream-deep'} ${className}`} role="img" aria-label={label}>
+        <img
+          src={displaySrc}
+          srcSet={failedSources.has(requestedSrc) ? undefined : srcSet}
+          sizes={sizes}
+          width={width}
+          height={height}
+          alt={alt}
+          loading={loading}
+          decoding="async"
+          fetchPriority={fetchPriority}
+          onLoad={() => setLoadedSources((sources) => new Set(sources).add(displaySrc))}
+          onError={() => setFailedSources((sources) => new Set(sources).add(displaySrc))}
+          className={`absolute inset-0 h-full w-full object-cover transition-[transform,opacity] duration-700 hover:scale-[1.02] ${loadedSources.has(displaySrc) ? 'opacity-100' : 'opacity-0'}`}
+        />
       </div>
     )
   }

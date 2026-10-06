@@ -1,23 +1,63 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ExternalLink, Image as ImageIcon, Pencil, Search } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import api, { API_BASE_URL } from '../../config/api'
+import { imageVariantUrl } from '../../utils/imageUrl'
 import AdminLayout from '../components/AdminLayout'
 
 const FILE_ORIGIN = API_BASE_URL.replace(/\/api\/?$/, '')
 const urlFor = (path) => path?.startsWith('http') ? path : `${FILE_ORIGIN}${path || ''}`
+const PAGE_SIZE = 24
 
 export default function CatalogGallery() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [hasMore, setHasMore] = useState(false)
+  const [error, setError] = useState('')
+  const [loadMoreError, setLoadMoreError] = useState(false)
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('All')
+  const sentinelRef = useRef(null)
+  const requestInProgress = useRef(false)
+  const nextPage = useRef(2)
+  const hasMoreRef = useRef(false)
 
   useEffect(() => {
-    api.get('/products/admin/all', { params: { page: 1, limit: 100 } })
-      .then(({ data }) => setProducts(data.products || []))
-      .finally(() => setLoading(false))
+    let cancelled = false
+    api.get('/products/admin/all', { params: { page: 1, limit: PAGE_SIZE } })
+      .then(({ data }) => {
+        if (cancelled) return
+        setProducts(data.products || [])
+        const moreAvailable = (data.pagination?.pages || 1) > 1
+        hasMoreRef.current = moreAvailable
+        setHasMore(moreAvailable)
+      })
+      .catch(() => { if (!cancelled) setError('Failed to load catalogue photos.') })
+      .finally(() => { if (!cancelled) setLoading(false) })
+    return () => { cancelled = true }
   }, [])
+
+  const loadNextPage = useCallback(async (retry = false) => {
+    if ((loadMoreError && !retry) || requestInProgress.current || !hasMoreRef.current) return
+    requestInProgress.current = true
+    const page = nextPage.current
+    setLoadingMore(true)
+    setLoadMoreError(false)
+    try {
+      const { data } = await api.get('/products/admin/all', { params: { page, limit: PAGE_SIZE } })
+      setProducts((current) => [...current, ...(data.products || [])])
+      nextPage.current = page + 1
+      const moreAvailable = page < (data.pagination?.pages || page)
+      hasMoreRef.current = moreAvailable
+      setHasMore(moreAvailable)
+    } catch {
+      setLoadMoreError(true)
+    } finally {
+      requestInProgress.current = false
+      setLoadingMore(false)
+    }
+  }, [loadMoreError])
 
   const categories = useMemo(() => ['All', ...new Set(products.map((p) => p.category).filter(Boolean))], [products])
 
@@ -39,6 +79,16 @@ export default function CatalogGallery() {
     return q ? list.filter((item) => `${item.label} ${item.product.name} ${item.product.subcategory || ''}`.toLowerCase().includes(q)) : list
   }, [products, category, search])
 
+  useEffect(() => {
+    if (loading || !hasMore || !sentinelRef.current) return undefined
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) loadNextPage() },
+      { rootMargin: '400px 0px' }
+    )
+    observer.observe(sentinelRef.current)
+    return () => observer.disconnect()
+  }, [assets.length, hasMore, loadNextPage, loading, loadingMore])
+
   return (
     <AdminLayout>
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-6">
@@ -53,21 +103,27 @@ export default function CatalogGallery() {
         <select value={category} onChange={(e) => setCategory(e.target.value)} className="border border-slate-200 rounded-lg px-3 py-2 text-sm bg-white">{categories.map((c) => <option key={c}>{c}</option>)}</select>
       </div>
 
-      {loading ? <div className="bg-white border border-slate-200 rounded-xl p-10 text-center text-sm text-slate-400">Loading catalogue photos...</div> : (
+      {loading ? <div className="bg-white border border-slate-200 rounded-xl p-10 text-center text-sm text-slate-400">Loading catalogue photos...</div> : error ? (
+        <div className="bg-white border border-slate-200 rounded-xl p-10 text-center text-sm text-slate-400">{error}</div>
+      ) : (
         <>
-          <div className="flex items-center justify-between mb-4"><p className="text-sm text-slate-500">{assets.length} photo{assets.length === 1 ? '' : 's'} visible</p><p className="text-xs text-slate-400">Click Edit to change category, colour name or images.</p></div>
-          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+          {products.length > 0 && <div className="flex items-center justify-between mb-4"><p className="text-sm text-slate-500">{assets.length} photo{assets.length === 1 ? '' : 's'} visible</p><p className="text-xs text-slate-400">Click Edit to change category, colour name or images.</p></div>}
+          {assets.length > 0 && <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
             {assets.map((item) => (
               <article key={`${item.product._id}-${item.path}`} className="bg-white border border-slate-200 rounded-xl overflow-hidden group">
                 <div className="aspect-[4/5] bg-slate-100 relative overflow-hidden">
-                  <img src={urlFor(item.path)} alt={item.label} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  <img src={imageVariantUrl(urlFor(item.path), 'card')} alt={item.label} loading="lazy" decoding="async" width={480} height={600} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                   {item.hex && <span className="absolute top-2 right-2 w-7 h-7 rounded-full border-2 border-white shadow" style={{ backgroundColor: item.hex }} title={item.hex} />}
                 </div>
                 <div className="p-3"><p className="text-[11px] uppercase tracking-wider text-slate-400">{item.product.category} · {item.product.subcategory}</p><h2 className="font-medium text-sm text-slate-800 mt-1 line-clamp-2">{item.label}</h2><Link to={`/admin/products/edit/${item.product._id}`} className="mt-3 inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-ink"><Pencil size={13} /> Edit item</Link></div>
               </article>
             ))}
-          </div>
-          {!assets.length && <div className="bg-white border border-dashed border-slate-300 rounded-xl p-12 text-center text-sm text-slate-400">No catalogue photos match this filter.</div>}
+          </div>}
+          {!assets.length && !hasMore && <div className="bg-white border border-dashed border-slate-300 rounded-xl p-12 text-center text-sm text-slate-400">No catalogue photos match this filter.</div>}
+          {hasMore && <div ref={sentinelRef} className="flex justify-center py-8 text-sm text-slate-400">
+            {loadingMore && <span>Loading more catalogue photos...</span>}
+            {loadMoreError && <button type="button" onClick={() => loadNextPage(true)} className="hover:text-ink">Could not load more photos. Try again.</button>}
+          </div>}
         </>
       )}
     </AdminLayout>

@@ -40,7 +40,7 @@ export default function HomeTextileGallery() {
                 transition={{ duration: 0.55, delay: (i % 4) * 0.06 }}
                 className={`group relative overflow-hidden rounded-[1.6rem] bg-cream-deep ${featured ? 'md:col-span-2 aspect-[16/9]' : 'aspect-[4/5]'}`}
               >
-                <img src={src} alt={slot.alt || slot.label} loading={i < 4 ? 'eager' : 'lazy'} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.045]" />
+                <img src={src} alt={slot.alt || slot.label} loading="lazy" decoding="async" onError={(event) => { if (event.currentTarget.dataset.fallbackApplied) return; event.currentTarget.dataset.fallbackApplied = 'true'; event.currentTarget.src = slot.fallback }} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.045]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <figcaption className="absolute left-4 bottom-4 rounded-full bg-white/90 backdrop-blur px-3 py-1.5 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-ink opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   Textile Edit {String(i + 1).padStart(2, '0')}

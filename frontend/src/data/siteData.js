@@ -79,9 +79,9 @@ export const MEGA_MENU = {
     description: 'Explore versatile base fabrics ready for custom dyeing, weaving and development.',
     cta: 'Explore Dyeable',
     items: [
-      { key: 'mega-cotton', label: 'Cotton', meta: 'Soft • breathable • versatile', to: '/fabrics?category=Cotton', image: '/dropdown-menu/dyeable-cotton.jpg' },
-      { key: 'mega-linen', label: 'Linen', meta: 'Natural • lightweight • textured', to: '/fabrics?category=Linen', image: '/dropdown-menu/dyeable-linen.jpg' },
-      { key: 'mega-rayon', label: 'Rayon', meta: 'Fluid • soft • premium drape', to: '/fabrics?category=Rayon', image: '/dropdown-menu/dyeable-rayon.jpg' },
+      { key: 'mega-cotton', label: 'Cotton', meta: 'Soft • breathable • versatile', to: '/fabrics?category=Cotton', image: '/dropdown-menu/dyeable-cotton.webp' },
+      { key: 'mega-linen', label: 'Linen', meta: 'Natural • lightweight • textured', to: '/fabrics?category=Linen', image: '/dropdown-menu/dyeable-linen.webp' },
+      { key: 'mega-rayon', label: 'Rayon', meta: 'Fluid • soft • premium drape', to: '/fabrics?category=Rayon', image: '/dropdown-menu/dyeable-rayon.webp' },
     ],
   },
   'Yarn Dyed': {
@@ -90,9 +90,9 @@ export const MEGA_MENU = {
     description: 'Yarn-dyed and colour-led fabrics with production-ready finishes for brands that care about texture, depth and consistency.',
     cta: 'Explore Dyed',
     items: [
-      { key: 'mega-reactive-dyed', label: 'Reactive Dyed', meta: 'Rich colour • durable finish', to: '/fabrics?category=Dyed', image: '/dropdown-menu/yarn-reactive-dyed.jpg' },
-      { key: 'mega-yarn-dyed', label: 'Yarn Dyed', meta: 'Woven colour • premium texture', to: '/fabrics?category=Yarn%20Dyed', image: '/dropdown-menu/yarn-dyed.jpg' },
-      { key: 'mega-custom-colour', label: 'Custom Colour', meta: 'Developed to your brief', to: '/services', image: '/dropdown-menu/custom-colour.jpg' },
+      { key: 'mega-reactive-dyed', label: 'Reactive Dyed', meta: 'Rich colour • durable finish', to: '/fabrics?category=Dyed', image: '/dropdown-menu/yarn-reactive-dyed.webp' },
+      { key: 'mega-yarn-dyed', label: 'Yarn Dyed', meta: 'Woven colour • premium texture', to: '/fabrics?category=Yarn%20Dyed', image: '/dropdown-menu/yarn-dyed.webp' },
+      { key: 'mega-custom-colour', label: 'Custom Colour', meta: 'Developed to your brief', to: '/services', image: '/dropdown-menu/custom-colour.webp' },
     ],
   },
   'Printing & Dyeing': {
@@ -101,9 +101,9 @@ export const MEGA_MENU = {
     description: 'From artwork to production: printed and dyed fabrics for contemporary collections.',
     cta: 'Explore Services',
     items: [
-      { key: 'mega-block-printing', label: 'Block Printing', meta: 'Artisanal • tactile • distinctive', to: '/fabrics?category=Printed', image: '/dropdown-menu/block-printing.jpg' },
-      { key: 'mega-digital-printing', label: 'Digital Printing', meta: 'Detailed • flexible • scalable', to: '/fabrics?category=Printed', image: '/dropdown-menu/digital-printing.jpg' },
-      { key: 'mega-custom-dyeing', label: 'Custom Dyeing', meta: 'Colour development • bulk ready', to: '/services', image: '/dropdown-menu/custom-dyeing.jpg' },
+      { key: 'mega-block-printing', label: 'Block Printing', meta: 'Artisanal • tactile • distinctive', to: '/fabrics?category=Printed', image: '/dropdown-menu/block-printing.webp' },
+      { key: 'mega-digital-printing', label: 'Digital Printing', meta: 'Detailed • flexible • scalable', to: '/fabrics?category=Printed', image: '/dropdown-menu/digital-printing.webp' },
+      { key: 'mega-custom-dyeing', label: 'Custom Dyeing', meta: 'Colour development • bulk ready', to: '/services', image: '/dropdown-menu/custom-dyeing.webp' },
     ],
   },
   'Garment Manufacturing': {
@@ -112,9 +112,9 @@ export const MEGA_MENU = {
     description: 'Turn sourced fabrics into production-ready garments with a clear development workflow.',
     cta: 'Explore Manufacturing',
     items: [
-      { key: 'mega-bulk-production', label: 'Bulk Production', meta: 'Consistent • production focused', to: '/services', image: '/dropdown-menu/bulk-production.jpg' },
-      { key: 'mega-custom-development', label: 'Custom Development', meta: 'Sampling • refinement • scale', to: '/services', image: '/dropdown-menu/custom-development.jpg' },
-      { key: 'mega-sourcing-support', label: 'Sourcing Support', meta: 'One partner from brief to delivery', to: '/contact', image: '/dropdown-menu/sourcing-support.jpg' },
+      { key: 'mega-bulk-production', label: 'Bulk Production', meta: 'Consistent • production focused', to: '/services', image: '/dropdown-menu/bulk-production.webp' },
+      { key: 'mega-custom-development', label: 'Custom Development', meta: 'Sampling • refinement • scale', to: '/services', image: '/dropdown-menu/custom-development.webp' },
+      { key: 'mega-sourcing-support', label: 'Sourcing Support', meta: 'One partner from brief to delivery', to: '/contact', image: '/dropdown-menu/sourcing-support.webp' },
     ],
   },
 }

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowUpRight, Palette, CheckCircle2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import api, { API_BASE_URL } from '../config/api'
+import { imageVariantUrl } from '../utils/imageUrl'
 
 const FILE_ORIGIN = API_BASE_URL.replace(/\/api\/?$/, '')
 const toUrl = (path) => (path?.startsWith('http') ? path : `${FILE_ORIGIN}${path || ''}`)
@@ -54,9 +55,9 @@ export default function FabricDetail() {
         <div className="container max-w-container grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
           <div className="lg:col-span-7">
             <div className="aspect-[4/3] rounded-[28px] overflow-hidden bg-cream border border-ink/8">
-              {image ? <img src={toUrl(image)} alt={`${product.name}${selected ? ` - ${selected.name}` : ''}`} className="h-full w-full object-cover" /> : <div className="h-full flex items-center justify-center text-ink-soft/50">No image uploaded</div>}
+              {image ? <img src={toUrl(image)} alt={`${product.name}${selected ? ` - ${selected.name}` : ''}`} loading="eager" decoding="async" fetchPriority="high" width={1200} height={900} className="h-full w-full object-cover" /> : <div className="h-full flex items-center justify-center text-ink-soft/50">No image uploaded</div>}
             </div>
-            {gallery.length > 1 && <div className="grid grid-cols-5 gap-3 mt-3">{gallery.map((img, i) => <button key={`${img}-${i}`} onClick={() => setActiveImage(i)} className={`aspect-square rounded-xl overflow-hidden border-2 ${i === activeImage ? 'border-gold' : 'border-ink/8'}`}><img src={toUrl(img)} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" /></button>)}</div>}
+            {gallery.length > 1 && <div className="grid grid-cols-5 gap-3 mt-3">{gallery.map((img, i) => <button key={`${img}-${i}`} onClick={() => setActiveImage(i)} className={`aspect-square rounded-xl overflow-hidden border-2 ${i === activeImage ? 'border-gold' : 'border-ink/8'}`}><img src={imageVariantUrl(toUrl(img), 'section')} alt={`${product.name} ${i + 1}`} loading="lazy" decoding="async" width={240} height={240} className="w-full h-full object-cover" /></button>)}</div>}
           </div>
 
           <div className="lg:col-span-5 flex flex-col gap-6">
@@ -71,7 +72,7 @@ export default function FabricDetail() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {product.colors.map((color, i) => (
                     <button key={color._id || `${color.name}-${i}`} onClick={() => setActiveColor(i)} className={`flex items-center gap-2.5 p-2 rounded-xl border text-left transition-all ${activeColor === i ? 'border-gold ring-1 ring-gold/30' : 'border-ink/10 hover:border-ink/30'}`}>
-                      <span className="w-10 h-10 rounded-lg overflow-hidden border border-black/10 shrink-0 bg-white">{color.images?.[0] ? <img src={toUrl(color.images[0])} alt={color.name} className="w-full h-full object-cover" /> : <span className="block w-full h-full" style={{ backgroundColor: color.hex }} />}</span>
+                      <span className="w-10 h-10 rounded-lg overflow-hidden border border-black/10 shrink-0 bg-white">{color.images?.[0] ? <img src={imageVariantUrl(toUrl(color.images[0]), 'section')} alt={color.name} loading="lazy" decoding="async" width={40} height={40} className="w-full h-full object-cover" /> : <span className="block w-full h-full" style={{ backgroundColor: color.hex }} />}</span>
                       <span className="text-xs font-medium text-ink leading-tight">{color.name}</span>
                     </button>
                   ))}

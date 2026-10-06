@@ -9,7 +9,6 @@ import CustomSolutionsSection from '../sections/CustomSolutionsSection'
 import TrustSection from '../sections/TrustSection'
 import StorySection from '../sections/StorySection'
 import BrandStatement from '../sections/BrandStatement'
-import TestimonialSection from '../sections/TestimonialSection'
 import ContactSection from '../sections/ContactSection'
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
       <TrustSection />
       <StorySection />
       <BrandStatement />
-      <TestimonialSection />
       <ContactSection />
     </>
   )

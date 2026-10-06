@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Loader2, AlertCircle, Search, X } from 'lucide-react'
@@ -6,40 +6,106 @@ import FabricCard from '../components/FabricCard'
 import api from '../config/api'
 import { FABRIC_CATEGORIES } from '../data/fabrics'
 
+const PAGE_SIZE = 12
+
 export default function Fabrics() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
-  const [active, setActive] = useState('All')
+  const [active, setActive] = useState(() => {
+    const category = searchParams.get('category')
+    return FABRIC_CATEGORIES.includes(category) ? category : 'All'
+  })
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [hasMore, setHasMore] = useState(false)
   const [error, setError] = useState('')
+  const [loadMoreError, setLoadMoreError] = useState(false)
   const [query, setQuery] = useState(searchParams.get('search') || '')
+  const sentinelRef = useRef(null)
+  const requestInProgress = useRef(false)
+  const nextPage = useRef(2)
+  const hasMoreRef = useRef(false)
+  const queryVersion = useRef(0)
+  const searchTerm = searchParams.get('search') || ''
 
   useEffect(() => {
-    setQuery(searchParams.get('search') || '')
+    setQuery(searchTerm)
     const cat = searchParams.get('category')
-    if (cat && FABRIC_CATEGORIES.includes(cat)) setActive(cat)
-  }, [searchParams])
+    setActive(cat && FABRIC_CATEGORIES.includes(cat) ? cat : 'All')
+  }, [searchParams, searchTerm])
 
   useEffect(() => {
     let cancelled = false
+    const version = ++queryVersion.current
+    requestInProgress.current = false
+    nextPage.current = 2
+    hasMoreRef.current = false
     setLoading(true)
     setError('')
+    setLoadingMore(false)
+    setHasMore(false)
+    setLoadMoreError(false)
+    setProducts([])
 
     api
-      .get('/products', { params: { category: active, search: searchParams.get('search') || undefined, limit: 100 } })
+      .get('/products', { params: { category: active, search: searchTerm || undefined, page: 1, limit: PAGE_SIZE } })
       .then(({ data }) => {
-        if (!cancelled) setProducts(data.products)
+        if (!cancelled && version === queryVersion.current) {
+          setProducts(data.products || [])
+          const moreAvailable = (data.pagination?.pages || 1) > 1
+          hasMoreRef.current = moreAvailable
+          setHasMore(moreAvailable)
+        }
       })
       .catch(() => {
-        if (!cancelled) setError('Failed to load fabrics. Please try again in a moment.')
+        if (!cancelled && version === queryVersion.current) setError('Failed to load fabrics. Please try again in a moment.')
       })
       .finally(() => {
-        if (!cancelled) setLoading(false)
+        if (!cancelled && version === queryVersion.current) setLoading(false)
       })
 
     return () => { cancelled = true }
-  }, [active, searchParams])
+  }, [active, searchTerm])
+
+  const loadNextPage = useCallback(async (retry = false) => {
+    if (loadMoreError && !retry) return
+    if (requestInProgress.current || !hasMoreRef.current) return
+    requestInProgress.current = true
+    const version = queryVersion.current
+    const page = nextPage.current
+    setLoadingMore(true)
+    setLoadMoreError(false)
+
+    try {
+      const { data } = await api.get('/products', {
+        params: { category: active, search: searchTerm || undefined, page, limit: PAGE_SIZE },
+      })
+      if (version !== queryVersion.current) return
+      setProducts((current) => [...current, ...(data.products || [])])
+      nextPage.current = page + 1
+      const moreAvailable = page < (data.pagination?.pages || page)
+      hasMoreRef.current = moreAvailable
+      setHasMore(moreAvailable)
+    } catch {
+      if (version === queryVersion.current) setLoadMoreError(true)
+    } finally {
+      if (version === queryVersion.current) {
+        requestInProgress.current = false
+        setLoadingMore(false)
+      }
+    }
+  }, [active, loadMoreError, searchTerm])
+
+  useEffect(() => {
+    if (loading || !hasMore || !sentinelRef.current) return undefined
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) loadNextPage() },
+      { rootMargin: '400px 0px' }
+    )
+    observer.observe(sentinelRef.current)
+    return () => observer.disconnect()
+  }, [hasMore, loading, loadNextPage, products.length, loadingMore])
 
   return (
     <>
@@ -97,11 +163,19 @@ export default function Fabrics() {
           )}
 
           {!loading && !error && products.length > 0 && (
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 md:gap-x-6 gap-y-10 md:gap-y-12">
-              {products.map((product, i) => (
-                <FabricCard key={product._id} product={product} index={i} />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 md:gap-x-6 gap-y-10 md:gap-y-12">
+                {products.map((product, i) => (
+                  <FabricCard key={product._id} product={product} index={i} loading={i < 4 ? 'eager' : 'lazy'} />
+                ))}
+              </div>
+              {hasMore && (
+                <div ref={sentinelRef} className="flex justify-center py-10 text-ink-soft/50">
+                  {loadingMore && <Loader2 size={20} className="animate-spin" aria-label="Loading more fabrics" />}
+                  {loadMoreError && <button type="button" onClick={() => loadNextPage(true)} className="text-sm hover:text-ink">Could not load more fabrics. Try again.</button>}
+                </div>
+              )}
+            </>
           )}
 
           {!loading && !error && products.length === 0 && (

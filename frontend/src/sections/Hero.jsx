@@ -79,6 +79,7 @@ export default function Hero() {
                 <ImagePlaceholder
                   label="Yarn dyed fabric detail"
                   className="h-full w-full"
+                  loading="eager"
                 />
               </div>
 
@@ -121,6 +122,11 @@ export default function Hero() {
               <ImagePlaceholder
                 label="Hero — premium yarn dyed fabric, close-up editorial textile composition"
                 className="h-full w-full"
+                loading="eager"
+                fetchPriority="high"
+                variant="hero"
+                width={1600}
+                height={800}
               />
 
             </div>

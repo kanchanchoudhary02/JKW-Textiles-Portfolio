@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Plus, Search, Pencil, Trash2, Star } from 'lucide-react'
 import api, { API_BASE_URL } from '../../config/api'
+import { imageVariantUrl } from '../../utils/imageUrl'
 import AdminLayout from '../components/AdminLayout'
 import ConfirmModal from '../components/ConfirmModal'
 import Toast from '../components/Toast'
@@ -120,7 +121,7 @@ export default function Products() {
               <tr key={p._id} className="border-t border-slate-100">
                 <td className="px-4 py-3">
                   {p.images?.[0] ? (
-                    <img src={`${FILE_ORIGIN}${p.images[0]}`} alt={p.name} className="w-12 h-12 rounded-lg object-cover" />
+                    <img src={imageVariantUrl(`${FILE_ORIGIN}${p.images[0]}`, 'card')} alt={p.name} loading="lazy" decoding="async" width={48} height={48} className="w-12 h-12 rounded-lg object-cover" />
                   ) : (
                     <div className="w-12 h-12 rounded-lg bg-slate-100" />
                   )}

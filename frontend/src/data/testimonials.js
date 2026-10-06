@@ -36,10 +36,4 @@ export const FEATURED_TESTIMONIALS = [
     role: '[REPLACE: Founder / Title, Company]',
     imageLabel: 'Client portrait — testimonial feature 1',
   },
-  {
-    quote: 'As a growing label, we needed a sourcing partner we could rely on. Low minimums, a genuinely wide fabric range, and support that actually responds — we recommend working with them.',
-    name: '[REPLACE: Client Name]',
-    role: '[REPLACE: Founder / Title, Company]',
-    imageLabel: 'Client portrait — testimonial feature 2',
-  },
 ]
