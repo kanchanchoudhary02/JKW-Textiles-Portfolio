@@ -121,76 +121,33 @@ async function seedHomeMediaIfNeeded() {
 
 /* =========================================================
    SEED MEGA MENU MEDIA
+   Keys must match the menu item keys in frontend/src/data/siteData.js
+   (and the Navigation slots in frontend/src/data/mediaSlots.js).
+   Only missing keys are seeded, so images uploaded from the
+   admin panel are never overwritten.
    ========================================================= */
 
 async function seedMegaMenuMediaIfNeeded() {
+  const fs = require('fs');
   const SiteMedia = require('./models/SiteMedia');
   const SiteSettings = require('./models/SiteSettings');
   const ProductImage = require('./models/ProductImage');
 
-  const VERSION = 1;
+  const VERSION = 2;
 
   const items = [
-    [
-      'mega-cotton',
-      'Navigation — Dyeable / Cotton',
-      'dyeable-cotton.jpg',
-    ],
-    [
-      'mega-linen',
-      'Navigation — Dyeable / Linen',
-      'dyeable-linen.jpg',
-    ],
-    [
-      'mega-rayon',
-      'Navigation — Dyeable / Rayon',
-      'dyeable-rayon.jpg',
-    ],
-    [
-      'mega-reactive-dyed',
-      'Navigation — Dyed / Reactive Dyed',
-      'yarn-reactive-dyed.jpg',
-    ],
-    [
-      'mega-yarn-dyed',
-      'Navigation — Dyed / Yarn Dyed',
-      'yarn-dyed.jpg',
-    ],
-    [
-      'mega-custom-colour',
-      'Navigation — Dyed / Custom Colour',
-      'custom-colour.jpg',
-    ],
-    [
-      'mega-block-printing',
-      'Navigation — Printing / Block Printing',
-      'block-printing.jpg',
-    ],
-    [
-      'mega-digital-printing',
-      'Navigation — Printing / Digital Printing',
-      'digital-printing.jpg',
-    ],
-    [
-      'mega-custom-dyeing',
-      'Navigation — Printing / Custom Dyeing',
-      'custom-dyeing.jpg',
-    ],
-    [
-      'mega-bulk-production',
-      'Navigation — Manufacturing / Bulk Production',
-      'bulk-production.jpg',
-    ],
-    [
-      'mega-custom-development',
-      'Navigation — Manufacturing / Custom Development',
-      'custom-development.jpg',
-    ],
-    [
-      'mega-sourcing-support',
-      'Navigation — Manufacturing / Sourcing Support',
-      'sourcing-support.jpg',
-    ],
+    ['mega-greige-cotton', 'Navigation — Greige / Cotton', 'dyeable-cotton.webp'],
+    ['mega-greige-linen', 'Navigation — Greige / Linen', 'dyeable-linen.webp'],
+    ['mega-greige-rayon', 'Navigation — Greige / Rayon', 'dyeable-rayon.webp'],
+    ['mega-yarn-stripes', 'Navigation — Yarn Dyed / Stripes', 'yarn-dyed.webp'],
+    ['mega-yarn-checks', 'Navigation — Yarn Dyed / Checks', 'yarn-reactive-dyed.webp'],
+    ['mega-yarn-printed', 'Navigation — Yarn Dyed / Printed', 'custom-colour.webp'],
+    ['mega-dyed-cotton', 'Navigation — Dyed / Cotton', 'dyeable-cotton.webp'],
+    ['mega-dyed-rayon', 'Navigation — Dyed / Rayon', 'dyeable-rayon.webp'],
+    ['mega-dyed-linen', 'Navigation — Dyed / Linen', 'dyeable-linen.webp'],
+    ['mega-printed-cotton', 'Navigation — Printed / Cotton', 'digital-printing.webp'],
+    ['mega-printed-rayon', 'Navigation — Printed / Rayon', 'block-printing.webp'],
+    ['mega-printed-linen', 'Navigation — Printed / Linen', 'custom-dyeing.webp'],
   ];
 
   const settings = await SiteSettings.findOne({
@@ -199,47 +156,38 @@ async function seedMegaMenuMediaIfNeeded() {
 
   if (settings?.megaMenuMediaVersion === VERSION) return;
 
-  const keys = items.map(([key]) => key);
+  // Images bundled inside the backend; falls back to the frontend folder if present.
+  const sourceDirs = [
+    path.join(__dirname, 'seed-assets', 'dropdown-menu'),
+    path.join(__dirname, '..', 'frontend', 'public', 'dropdown-menu'),
+  ];
 
-  const oldDocs = await SiteMedia.find({
-    key: { $in: keys },
-  }).lean();
-
-  const oldIds = oldDocs
-    .map((doc) => doc.imageId)
-    .filter(Boolean);
-
-  if (oldIds.length) {
-    await ProductImage.deleteMany({
-      _id: { $in: oldIds },
-    }).catch(() => {});
-  }
-
-  await SiteMedia.deleteMany({
-    key: { $in: keys },
-  });
-
-  const mediaDir = path.join(
-    __dirname,
-    '..',
-    'frontend',
-    'public',
-    'dropdown-menu'
+  const existing = new Set(
+    (
+      await SiteMedia.find({
+        key: { $in: items.map(([key]) => key) },
+      })
+        .select('key')
+        .lean()
+    ).map((doc) => doc.key)
   );
 
+  let seeded = 0;
+
   for (const [key, label, filename] of items) {
-    const filePath = path.join(
-      mediaDir,
-      filename
+    if (existing.has(key)) continue;
+
+    const dir = sourceDirs.find((d) =>
+      fs.existsSync(path.join(d, filename))
     );
 
-    const fs = require('fs');
+    if (!dir) continue;
 
-    if (!fs.existsSync(filePath)) continue;
-
+    // One separate image record per key, so replacing/resetting one
+    // slot in the admin never affects another slot.
     const image = await ProductImage.create({
-      data: fs.readFileSync(filePath),
-      contentType: 'image/jpeg',
+      data: fs.readFileSync(path.join(dir, filename)),
+      contentType: 'image/webp',
       filename,
     });
 
@@ -251,6 +199,8 @@ async function seedMegaMenuMediaIfNeeded() {
       url: `/api/images/${image._id}`,
       imageId: image._id,
     });
+
+    seeded += 1;
   }
 
   await SiteSettings.findOneAndUpdate(
@@ -267,7 +217,7 @@ async function seedMegaMenuMediaIfNeeded() {
   );
 
   console.log(
-    'Seeded new JKW navigation dropdown images.'
+    `Seeded ${seeded} navigation dropdown images.`
   );
 }
 
@@ -282,18 +232,18 @@ async function prepareCriticalImageVariants() {
 
   const keys = [
     'home-hero',
-    'mega-cotton',
-    'mega-linen',
-    'mega-rayon',
-    'mega-reactive-dyed',
-    'mega-yarn-dyed',
-    'mega-custom-colour',
-    'mega-block-printing',
-    'mega-digital-printing',
-    'mega-custom-dyeing',
-    'mega-bulk-production',
-    'mega-custom-development',
-    'mega-sourcing-support',
+    'mega-greige-cotton',
+    'mega-greige-linen',
+    'mega-greige-rayon',
+    'mega-yarn-stripes',
+    'mega-yarn-checks',
+    'mega-yarn-printed',
+    'mega-dyed-cotton',
+    'mega-dyed-rayon',
+    'mega-dyed-linen',
+    'mega-printed-cotton',
+    'mega-printed-rayon',
+    'mega-printed-linen',
   ];
 
   const media = await SiteMedia.find({

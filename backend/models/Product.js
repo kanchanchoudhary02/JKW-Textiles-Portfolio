@@ -22,7 +22,7 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ['Cotton', 'Linen', 'Rayon', 'Blended', 'Printed', 'Dyed', 'Yarn Dyed', 'Other'],
+      enum: ['Greige', 'Yarn Dyed', 'Dobby / Schiffli', 'Dyed', 'Printed', 'Cotton', 'Linen', 'Rayon', 'Blended', 'Other'],
     },
     subcategory: { type: String, trim: true, default: '' },
     spec: { type: String, trim: true, default: '' },

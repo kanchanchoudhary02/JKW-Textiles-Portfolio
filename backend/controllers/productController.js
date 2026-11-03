@@ -87,7 +87,7 @@ function allColorImages(colors = []) {
 // GET /api/products
 async function getProducts(req, res, next) {
   try {
-    const { category, search, featured, page = 1, limit = 12 } = req.query;
+    const { category, subcategory, search, featured, page = 1, limit = 12 } = req.query;
     const filter = { status: 'active' };
     const andFilters = [];
     if (category && category !== 'All') {
@@ -97,6 +97,11 @@ async function getProducts(req, res, next) {
           { category: 'Dyed', subcategory: { $regex: /^yarn\s*dyed$/i } },
         ] });
       } else filter.category = category;
+    }
+    if (subcategory && String(subcategory).trim()) {
+      // Fabric Subcategory (e.g. Checks, Stripes). Also matches an exact tag, same as the website filter.
+      const sub = String(subcategory).trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      andFilters.push({ $or: [{ subcategory: new RegExp(sub, 'i') }, { tags: new RegExp(`^${sub}$`, 'i') }] });
     }
     if (featured === 'true') filter.featured = true;
     if (search && search.trim()) {
