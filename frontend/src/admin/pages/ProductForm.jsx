@@ -6,7 +6,7 @@ import { imageVariantUrl } from '../../utils/imageUrl'
 import AdminLayout from '../components/AdminLayout'
 import Toast from '../components/Toast'
 
-const CATEGORIES = ['Cotton', 'Linen', 'Rayon', 'Blended', 'Printed', 'Dyed', 'Yarn Dyed', 'Other']
+const CATEGORIES = ['Cotton', 'Linen', 'Rayon', 'Blended', 'Printed', 'Dyed', 'Yarn Dyed', 'Dobby / Schiffli/Jacquard', 'Dobby / Schiffli', 'Other']
 const FILE_ORIGIN = API_BASE_URL.replace(/\/api\/?$/, '')
 const EMPTY = { name: '', description: '', category: 'Dyed', subcategory: '', spec: '', sku: '', featured: false, status: 'active', tags: '' }
 const newId = () => `${Date.now()}-${Math.random().toString(16).slice(2)}`

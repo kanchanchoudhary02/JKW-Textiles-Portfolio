@@ -3,6 +3,7 @@ const path = require('path');
 const sharp = require('sharp');
 const Product = require('../models/Product');
 const ProductImage = require('../models/ProductImage');
+const { getProductCategoryFilter } = require('../constants/productCategories');
 
 async function createThumbnail(data) {
   return sharp(data)
@@ -96,7 +97,7 @@ async function getProducts(req, res, next) {
           { category: 'Yarn Dyed' },
           { category: 'Dyed', subcategory: { $regex: /^yarn\s*dyed$/i } },
         ] });
-      } else filter.category = category;
+      } else filter.category = getProductCategoryFilter(category);
     }
     if (subcategory && String(subcategory).trim()) {
       // Fabric Subcategory (e.g. Checks, Stripes). Also matches an exact tag, same as the website filter.
@@ -134,7 +135,7 @@ async function getAdminProducts(req, res, next) {
   try {
     const { category, status, search, page = 1, limit = 20 } = req.query;
     const filter = {};
-    if (category && category !== 'All') filter.category = category;
+    if (category && category !== 'All') filter.category = getProductCategoryFilter(category);
     if (status && status !== 'All') filter.status = status;
     if (search) filter.name = { $regex: search, $options: 'i' };
     const pageNum = Math.max(parseInt(page, 10) || 1, 1);

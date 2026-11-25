@@ -1,0 +1,1702 @@
+[
+  {
+    "index": 1,
+    "filename": "00b70b4b-e461-4f68-bf00-4c607e00f8df.png",
+    "originalName": "00b70b4b-e461-4f68-bf00-4c607e00f8df.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Broad Stripe",
+    "group": "patterned",
+    "colorName": "Grey / Teal",
+    "hex": "#cdc1b3",
+    "name": "Yarn Dyed Vertical Broad Stripe — Grey / Teal · Swatch 001",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical broad stripe",
+      "grey / teal"
+    ]
+  },
+  {
+    "index": 2,
+    "filename": "048989eb-9bd0-4122-8990-e0fac31784db.png",
+    "originalName": "048989eb-9bd0-4122-8990-e0fac31784db.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Broad Stripe",
+    "group": "patterned",
+    "colorName": "Red / Black",
+    "hex": "#3f201d",
+    "name": "Yarn Dyed Vertical Broad Stripe — Red / Black · Swatch 002",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical broad stripe",
+      "red / black"
+    ]
+  },
+  {
+    "index": 3,
+    "filename": "0e890075-930e-4162-89dc-8089a4bc2247.png",
+    "originalName": "0e890075-930e-4162-89dc-8089a4bc2247.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Check",
+    "group": "patterned",
+    "colorName": "Pink",
+    "hex": "#df7777",
+    "name": "Yarn Dyed Micro Check — Pink · Swatch 003",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro check",
+      "pink"
+    ]
+  },
+  {
+    "index": 4,
+    "filename": "115b7b6f-697c-420c-90f2-fe62e0ba9d53.png",
+    "originalName": "115b7b6f-697c-420c-90f2-fe62e0ba9d53.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Orange / Blue",
+    "hex": "#869aa2",
+    "name": "Yarn Dyed Fine Multi-Stripe — Orange / Blue · Swatch 004",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine multi-stripe",
+      "orange / blue"
+    ]
+  },
+  {
+    "index": 5,
+    "filename": "1a2311bb-dcbf-4581-a940-9a84830608f8.png",
+    "originalName": "1a2311bb-dcbf-4581-a940-9a84830608f8.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Broad Stripe",
+    "group": "patterned",
+    "colorName": "Beige / Brown",
+    "hex": "#d59754",
+    "name": "Yarn Dyed Horizontal Broad Stripe — Beige / Brown · Swatch 005",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal broad stripe",
+      "beige / brown"
+    ]
+  },
+  {
+    "index": 6,
+    "filename": "3f655827-9347-47cc-8df5-013419c770fe.png",
+    "originalName": "3f655827-9347-47cc-8df5-013419c770fe.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Grey / Tan",
+    "hex": "#728189",
+    "name": "Yarn Dyed Fine Vertical Stripe — Grey / Tan · Swatch 006",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine vertical stripe",
+      "grey / tan"
+    ]
+  },
+  {
+    "index": 7,
+    "filename": "40415092-3640-46f4-ba12-7f8bd805df28.png",
+    "originalName": "40415092-3640-46f4-ba12-7f8bd805df28.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Blue / Red",
+    "hex": "#5d96be",
+    "name": "Yarn Dyed Horizontal Multi-Stripe — Blue / Red · Swatch 007",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal multi-stripe",
+      "blue / red"
+    ]
+  },
+  {
+    "index": 8,
+    "filename": "4582cc85-d08a-4cb0-8eac-d8988cee5d70.png",
+    "originalName": "4582cc85-d08a-4cb0-8eac-d8988cee5d70.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Broad Stripe",
+    "group": "patterned",
+    "colorName": "Blue / Cream",
+    "hex": "#acb1ba",
+    "name": "Yarn Dyed Vertical Broad Stripe — Blue / Cream · Swatch 008",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical broad stripe",
+      "blue / cream"
+    ]
+  },
+  {
+    "index": 9,
+    "filename": "94777a45-815d-4a7b-aaa6-50237cc765e5.png",
+    "originalName": "94777a45-815d-4a7b-aaa6-50237cc765e5.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Grey / Brown",
+    "hex": "#867769",
+    "name": "Yarn Dyed Fine Vertical Stripe — Grey / Brown · Swatch 009",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine vertical stripe",
+      "grey / brown"
+    ]
+  },
+  {
+    "index": 10,
+    "filename": "9e8bcbc8-ed96-4b72-a62d-b66580b823d5.png",
+    "originalName": "9e8bcbc8-ed96-4b72-a62d-b66580b823d5.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Yellow / Blue",
+    "hex": "#ecb555",
+    "name": "Yarn Dyed Fine Multi-Stripe — Yellow / Blue · Swatch 010",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine multi-stripe",
+      "yellow / blue"
+    ]
+  },
+  {
+    "index": 11,
+    "filename": "Black w gold sq.png",
+    "originalName": "Black w gold sq.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Windowpane Check",
+    "group": "patterned",
+    "colorName": "Black / Gold",
+    "hex": "#24272c",
+    "name": "Yarn Dyed Windowpane Check — Black / Gold · Swatch 011",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "windowpane check",
+      "black / gold"
+    ]
+  },
+  {
+    "index": 12,
+    "filename": "Black w gold.png",
+    "originalName": "Black w gold.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Windowpane Check",
+    "group": "patterned",
+    "colorName": "Black / Gold",
+    "hex": "#24272b",
+    "name": "Yarn Dyed Windowpane Check — Black / Gold · Swatch 012",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "windowpane check",
+      "black / gold"
+    ]
+  },
+  {
+    "index": 13,
+    "filename": "Blue stripe.png",
+    "originalName": "Blue stripe.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Navy / White",
+    "hex": "#8a8385",
+    "name": "Yarn Dyed Horizontal Stripe — Navy / White · Swatch 013",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal stripe",
+      "navy / white"
+    ]
+  },
+  {
+    "index": 14,
+    "filename": "Brown Sq.png",
+    "originalName": "Brown Sq.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Gingham Check",
+    "group": "patterned",
+    "colorName": "Brown / Cream",
+    "hex": "#957c65",
+    "name": "Yarn Dyed Gingham Check — Brown / Cream · Swatch 014",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "gingham check",
+      "brown / cream"
+    ]
+  },
+  {
+    "index": 15,
+    "filename": "Brown Stripe.png",
+    "originalName": "Brown Stripe.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Brown / Cream",
+    "hex": "#ac8b75",
+    "name": "Yarn Dyed Horizontal Stripe — Brown / Cream · Swatch 015",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal stripe",
+      "brown / cream"
+    ]
+  },
+  {
+    "index": 16,
+    "filename": "CHikoo SQ.png",
+    "originalName": "CHikoo SQ.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Gingham Check",
+    "group": "patterned",
+    "colorName": "Beige / Cream",
+    "hex": "#bea48a",
+    "name": "Yarn Dyed Gingham Check — Beige / Cream · Swatch 016",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "gingham check",
+      "beige / cream"
+    ]
+  },
+  {
+    "index": 17,
+    "filename": "CPY RED.png",
+    "originalName": "CPY RED.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Gingham Check",
+    "group": "patterned",
+    "colorName": "Red / White",
+    "hex": "#c16c68",
+    "name": "Yarn Dyed Gingham Check — Red / White · Swatch 017",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "gingham check",
+      "red / white"
+    ]
+  },
+  {
+    "index": 18,
+    "filename": "CPY.png",
+    "originalName": "CPY.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Gingham Check",
+    "group": "patterned",
+    "colorName": "Black / White",
+    "hex": "#84817a",
+    "name": "Yarn Dyed Gingham Check — Black / White · Swatch 018",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "gingham check",
+      "black / white"
+    ]
+  },
+  {
+    "index": 19,
+    "filename": "ChatGPT Image Jun 23, 2026, 02_49_59 PM.png",
+    "originalName": "ChatGPT Image Jun 23, 2026, 02_49_59 PM.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Windowpane Check",
+    "group": "patterned",
+    "colorName": "Black / Gold",
+    "hex": "#24272c",
+    "name": "Yarn Dyed Windowpane Check — Black / Gold · Swatch 019",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "windowpane check",
+      "black / gold"
+    ]
+  },
+  {
+    "index": 20,
+    "filename": "IMG_5554.jpeg",
+    "originalName": "IMG_5554.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Coral / Pink",
+    "hex": "#c8675a",
+    "name": "Dyed Textured Solid — Coral / Pink · Swatch 020",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "coral / pink"
+    ]
+  },
+  {
+    "index": 21,
+    "filename": "IMG_5555.jpeg",
+    "originalName": "IMG_5555.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Multicolour",
+    "hex": "#988a7e",
+    "name": "Yarn Dyed Micro Horizontal Stripe — Multicolour · Swatch 021",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro horizontal stripe",
+      "multicolour"
+    ]
+  },
+  {
+    "index": 22,
+    "filename": "IMG_5556.jpeg",
+    "originalName": "IMG_5556.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Beige / Multicolour",
+    "hex": "#a09586",
+    "name": "Yarn Dyed Fine Vertical Stripe — Beige / Multicolour · Swatch 022",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine vertical stripe",
+      "beige / multicolour"
+    ]
+  },
+  {
+    "index": 23,
+    "filename": "IMG_5557.jpeg",
+    "originalName": "IMG_5557.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Pink / Green",
+    "hex": "#c59596",
+    "name": "Yarn Dyed Vertical Stripe — Pink / Green · Swatch 023",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical stripe",
+      "pink / green"
+    ]
+  },
+  {
+    "index": 24,
+    "filename": "IMG_5558.jpeg",
+    "originalName": "IMG_5558.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Wavy Stripe",
+    "group": "patterned",
+    "colorName": "Grey / Yellow",
+    "hex": "#88858c",
+    "name": "Yarn Dyed Fine Wavy Stripe — Grey / Yellow · Swatch 024",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine wavy stripe",
+      "grey / yellow"
+    ]
+  },
+  {
+    "index": 25,
+    "filename": "IMG_5559.jpeg",
+    "originalName": "IMG_5559.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Broad Stripe",
+    "group": "patterned",
+    "colorName": "Teal / Coral",
+    "hex": "#b88170",
+    "name": "Yarn Dyed Horizontal Broad Stripe — Teal / Coral · Swatch 025",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal broad stripe",
+      "teal / coral"
+    ]
+  },
+  {
+    "index": 26,
+    "filename": "IMG_5560.jpeg",
+    "originalName": "IMG_5560.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Brown / Grey",
+    "hex": "#ab9178",
+    "name": "Yarn Dyed Horizontal Stripe — Brown / Grey · Swatch 026",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal stripe",
+      "brown / grey"
+    ]
+  },
+  {
+    "index": 27,
+    "filename": "IMG_5561.jpeg",
+    "originalName": "IMG_5561.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Broad Stripe",
+    "group": "patterned",
+    "colorName": "Tan / Brown",
+    "hex": "#c99e6c",
+    "name": "Yarn Dyed Horizontal Broad Stripe — Tan / Brown · Swatch 027",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal broad stripe",
+      "tan / brown"
+    ]
+  },
+  {
+    "index": 28,
+    "filename": "IMG_5562.jpeg",
+    "originalName": "IMG_5562.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Grey / White",
+    "hex": "#8b8273",
+    "name": "Yarn Dyed Fine Horizontal Stripe — Grey / White · Swatch 028",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine horizontal stripe",
+      "grey / white"
+    ]
+  },
+  {
+    "index": 29,
+    "filename": "IMG_5563.jpeg",
+    "originalName": "IMG_5563.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Windowpane Check",
+    "group": "patterned",
+    "colorName": "Black / White",
+    "hex": "#6d655d",
+    "name": "Yarn Dyed Micro Windowpane Check — Black / White · Swatch 029",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro windowpane check",
+      "black / white"
+    ]
+  },
+  {
+    "index": 30,
+    "filename": "IMG_5564.jpeg",
+    "originalName": "IMG_5564.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Check",
+    "group": "patterned",
+    "colorName": "Pink",
+    "hex": "#bf7a79",
+    "name": "Yarn Dyed Micro Check — Pink · Swatch 030",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro check",
+      "pink"
+    ]
+  },
+  {
+    "index": 31,
+    "filename": "IMG_5565.jpeg",
+    "originalName": "IMG_5565.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Coral / Green",
+    "hex": "#af7668",
+    "name": "Yarn Dyed Vertical Stripe — Coral / Green · Swatch 031",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical stripe",
+      "coral / green"
+    ]
+  },
+  {
+    "index": 32,
+    "filename": "IMG_5566.jpeg",
+    "originalName": "IMG_5566.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Gingham Check",
+    "group": "patterned",
+    "colorName": "Green / Cream",
+    "hex": "#8f887d",
+    "name": "Yarn Dyed Gingham Check — Green / Cream · Swatch 032",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "gingham check",
+      "green / cream"
+    ]
+  },
+  {
+    "index": 33,
+    "filename": "IMG_5567.jpeg",
+    "originalName": "IMG_5567.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Dusty Coral",
+    "hex": "#bc766d",
+    "name": "Dyed Textured Solid — Dusty Coral · Swatch 033",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "dusty coral"
+    ]
+  },
+  {
+    "index": 34,
+    "filename": "IMG_5568.jpeg",
+    "originalName": "IMG_5568.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Burnt Orange",
+    "hex": "#be5942",
+    "name": "Dyed Textured Solid — Burnt Orange · Swatch 034",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "burnt orange"
+    ]
+  },
+  {
+    "index": 35,
+    "filename": "IMG_5569.jpeg",
+    "originalName": "IMG_5569.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Grey",
+    "hex": "#908e80",
+    "name": "Dyed Textured Solid — Grey · Swatch 035",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "grey"
+    ]
+  },
+  {
+    "index": 36,
+    "filename": "IMG_5570.jpeg",
+    "originalName": "IMG_5570.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Taupe",
+    "hex": "#9d8966",
+    "name": "Dyed Textured Solid — Taupe · Swatch 036",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "taupe"
+    ]
+  },
+  {
+    "index": 37,
+    "filename": "IMG_5571.jpeg",
+    "originalName": "IMG_5571.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Mauve",
+    "hex": "#7c6d6c",
+    "name": "Dyed Textured Solid — Mauve · Swatch 037",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "mauve"
+    ]
+  },
+  {
+    "index": 38,
+    "filename": "IMG_5572.jpeg",
+    "originalName": "IMG_5572.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Teal Grey",
+    "hex": "#84958c",
+    "name": "Dyed Textured Solid — Teal Grey · Swatch 038",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "teal grey"
+    ]
+  },
+  {
+    "index": 39,
+    "filename": "IMG_5573.jpeg",
+    "originalName": "IMG_5573.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Olive",
+    "hex": "#a3a379",
+    "name": "Dyed Textured Solid — Olive · Swatch 039",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "olive"
+    ]
+  },
+  {
+    "index": 40,
+    "filename": "IMG_5574.jpeg",
+    "originalName": "IMG_5574.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Rose Pink",
+    "hex": "#cb7a77",
+    "name": "Dyed Textured Solid — Rose Pink · Swatch 040",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "rose pink"
+    ]
+  },
+  {
+    "index": 41,
+    "filename": "IMG_5575.jpeg",
+    "originalName": "IMG_5575.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Light Blue",
+    "hex": "#869294",
+    "name": "Dyed Textured Solid — Light Blue · Swatch 041",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "light blue"
+    ]
+  },
+  {
+    "index": 42,
+    "filename": "IMG_5576.jpeg",
+    "originalName": "IMG_5576.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Subtle Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Beige / Yellow",
+    "hex": "#aba39a",
+    "name": "Yarn Dyed Subtle Horizontal Stripe — Beige / Yellow · Swatch 042",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "subtle horizontal stripe",
+      "beige / yellow"
+    ]
+  },
+  {
+    "index": 43,
+    "filename": "IMG_5579.jpeg",
+    "originalName": "IMG_5579.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Off White",
+    "hex": "#c0bcb1",
+    "name": "Dyed Textured Solid — Off White · Swatch 043",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "off white"
+    ]
+  },
+  {
+    "index": 44,
+    "filename": "IMG_5580.jpeg",
+    "originalName": "IMG_5580.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Sand",
+    "hex": "#b58c73",
+    "name": "Dyed Textured Solid — Sand · Swatch 044",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "sand"
+    ]
+  },
+  {
+    "index": 45,
+    "filename": "IMG_5581.jpeg",
+    "originalName": "IMG_5581.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Lilac",
+    "hex": "#cd8baf",
+    "name": "Dyed Textured Solid — Lilac · Swatch 045",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "lilac"
+    ]
+  },
+  {
+    "index": 46,
+    "filename": "IMG_5582.jpeg",
+    "originalName": "IMG_5582.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Rose Red",
+    "hex": "#bb6764",
+    "name": "Dyed Textured Solid — Rose Red · Swatch 046",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "rose red"
+    ]
+  },
+  {
+    "index": 47,
+    "filename": "IMG_5583.jpeg",
+    "originalName": "IMG_5583.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Denim Blue",
+    "hex": "#8c8e89",
+    "name": "Dyed Textured Solid — Denim Blue · Swatch 047",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "denim blue"
+    ]
+  },
+  {
+    "index": 48,
+    "filename": "IMG_5584.jpeg",
+    "originalName": "IMG_5584.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Mustard",
+    "hex": "#c1ad7a",
+    "name": "Dyed Textured Solid — Mustard · Swatch 048",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "mustard"
+    ]
+  },
+  {
+    "index": 49,
+    "filename": "IMG_5586.jpeg",
+    "originalName": "IMG_5586.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Sage Green",
+    "hex": "#a5b776",
+    "name": "Dyed Textured Solid — Sage Green · Swatch 049",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "sage green"
+    ]
+  },
+  {
+    "index": 50,
+    "filename": "IMG_5587.jpeg",
+    "originalName": "IMG_5587.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Ivory",
+    "hex": "#c8c2b7",
+    "name": "Dyed Textured Solid — Ivory · Swatch 050",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "ivory"
+    ]
+  },
+  {
+    "index": 51,
+    "filename": "IMG_5588.jpeg",
+    "originalName": "IMG_5588.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Brown / Cream",
+    "hex": "#a99a91",
+    "name": "Yarn Dyed Fine Vertical Stripe — Brown / Cream · Swatch 051",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine vertical stripe",
+      "brown / cream"
+    ]
+  },
+  {
+    "index": 52,
+    "filename": "IMG_5589.jpeg",
+    "originalName": "IMG_5589.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Purple / White",
+    "hex": "#a38fa4",
+    "name": "Yarn Dyed Vertical Stripe — Purple / White · Swatch 052",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical stripe",
+      "purple / white"
+    ]
+  },
+  {
+    "index": 53,
+    "filename": "IMG_5590.jpeg",
+    "originalName": "IMG_5590.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Peach / Cream",
+    "hex": "#d4ab9a",
+    "name": "Yarn Dyed Vertical Stripe — Peach / Cream · Swatch 053",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical stripe",
+      "peach / cream"
+    ]
+  },
+  {
+    "index": 54,
+    "filename": "IMG_5591.jpeg",
+    "originalName": "IMG_5591.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Blue / Peach",
+    "hex": "#839db3",
+    "name": "Yarn Dyed Horizontal Multi-Stripe — Blue / Peach · Swatch 054",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal multi-stripe",
+      "blue / peach"
+    ]
+  },
+  {
+    "index": 55,
+    "filename": "IMG_5592.jpeg",
+    "originalName": "IMG_5592.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Vertical Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Pink / Blue",
+    "hex": "#a0808c",
+    "name": "Yarn Dyed Fine Vertical Multi-Stripe — Pink / Blue · Swatch 055",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine vertical multi-stripe",
+      "pink / blue"
+    ]
+  },
+  {
+    "index": 56,
+    "filename": "IMG_5593.jpeg",
+    "originalName": "IMG_5593.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Broad Stripe",
+    "group": "patterned",
+    "colorName": "White / Blue Grey",
+    "hex": "#bfbfb4",
+    "name": "Yarn Dyed Vertical Broad Stripe — White / Blue Grey · Swatch 056",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical broad stripe",
+      "white / blue grey"
+    ]
+  },
+  {
+    "index": 57,
+    "filename": "IMG_5594.jpeg",
+    "originalName": "IMG_5594.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Pink / Grey",
+    "hex": "#bf89a3",
+    "name": "Yarn Dyed Horizontal Stripe — Pink / Grey · Swatch 057",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal stripe",
+      "pink / grey"
+    ]
+  },
+  {
+    "index": 58,
+    "filename": "IMG_5595.jpeg",
+    "originalName": "IMG_5595.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Grey / Cream",
+    "hex": "#aca69f",
+    "name": "Yarn Dyed Vertical Stripe — Grey / Cream · Swatch 058",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical stripe",
+      "grey / cream"
+    ]
+  },
+  {
+    "index": 59,
+    "filename": "IMG_5596.jpeg",
+    "originalName": "IMG_5596.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Plaid",
+    "group": "patterned",
+    "colorName": "Grey / White",
+    "hex": "#abaa9f",
+    "name": "Yarn Dyed Micro Plaid — Grey / White · Swatch 059",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro plaid",
+      "grey / white"
+    ]
+  },
+  {
+    "index": 60,
+    "filename": "IMG_5597.jpeg",
+    "originalName": "IMG_5597.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Horizontal Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Multicolour",
+    "hex": "#90a19e",
+    "name": "Yarn Dyed Fine Horizontal Multi-Stripe — Multicolour · Swatch 060",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine horizontal multi-stripe",
+      "multicolour"
+    ]
+  },
+  {
+    "index": 61,
+    "filename": "IMG_5598.jpeg",
+    "originalName": "IMG_5598.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Broad Stripe",
+    "group": "patterned",
+    "colorName": "White / Grey",
+    "hex": "#bebcac",
+    "name": "Yarn Dyed Vertical Broad Stripe — White / Grey · Swatch 061",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical broad stripe",
+      "white / grey"
+    ]
+  },
+  {
+    "index": 62,
+    "filename": "IMG_5599.jpeg",
+    "originalName": "IMG_5599.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Check",
+    "group": "patterned",
+    "colorName": "Green / White",
+    "hex": "#8a9a8a",
+    "name": "Yarn Dyed Micro Check — Green / White · Swatch 062",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro check",
+      "green / white"
+    ]
+  },
+  {
+    "index": 63,
+    "filename": "IMG_5600.jpeg",
+    "originalName": "IMG_5600.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Check",
+    "group": "patterned",
+    "colorName": "Orange / White",
+    "hex": "#b78376",
+    "name": "Yarn Dyed Micro Check — Orange / White · Swatch 063",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro check",
+      "orange / white"
+    ]
+  },
+  {
+    "index": 64,
+    "filename": "IMG_5601.jpeg",
+    "originalName": "IMG_5601.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Check",
+    "group": "patterned",
+    "colorName": "Teal / White",
+    "hex": "#8c918a",
+    "name": "Yarn Dyed Micro Check — Teal / White · Swatch 064",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro check",
+      "teal / white"
+    ]
+  },
+  {
+    "index": 65,
+    "filename": "IMG_5602.jpeg",
+    "originalName": "IMG_5602.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Micro Check",
+    "group": "patterned",
+    "colorName": "Red / Black",
+    "hex": "#6c5853",
+    "name": "Yarn Dyed Micro Check — Red / Black · Swatch 065",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "micro check",
+      "red / black"
+    ]
+  },
+  {
+    "index": 66,
+    "filename": "IMG_5603.jpeg",
+    "originalName": "IMG_5603.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Grey / White",
+    "hex": "#817b6f",
+    "name": "Yarn Dyed Fine Horizontal Stripe — Grey / White · Swatch 066",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine horizontal stripe",
+      "grey / white"
+    ]
+  },
+  {
+    "index": 67,
+    "filename": "IMG_5604.jpeg",
+    "originalName": "IMG_5604.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Windowpane Check",
+    "group": "patterned",
+    "colorName": "Grey / White",
+    "hex": "#7f7b72",
+    "name": "Yarn Dyed Windowpane Check — Grey / White · Swatch 067",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "windowpane check",
+      "grey / white"
+    ]
+  },
+  {
+    "index": 68,
+    "filename": "IMG_5605.jpeg",
+    "originalName": "IMG_5605.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Plaid Check",
+    "group": "patterned",
+    "colorName": "Black / White",
+    "hex": "#5f5c55",
+    "name": "Yarn Dyed Plaid Check — Black / White · Swatch 068",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "plaid check",
+      "black / white"
+    ]
+  },
+  {
+    "index": 69,
+    "filename": "IMG_5606.jpeg",
+    "originalName": "IMG_5606.jpeg",
+    "fabricType": "Yarn Dyed",
+    "designType": "Windowpane Check",
+    "group": "patterned",
+    "colorName": "Grey / Yellow",
+    "hex": "#8e8885",
+    "name": "Yarn Dyed Windowpane Check — Grey / Yellow · Swatch 069",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "windowpane check",
+      "grey / yellow"
+    ]
+  },
+  {
+    "index": 70,
+    "filename": "IMG_5607.jpeg",
+    "originalName": "IMG_5607.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Charcoal",
+    "hex": "#706569",
+    "name": "Dyed Textured Solid — Charcoal · Swatch 070",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "charcoal"
+    ]
+  },
+  {
+    "index": 71,
+    "filename": "IMG_5608.jpeg",
+    "originalName": "IMG_5608.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Terracotta",
+    "hex": "#9d6e5c",
+    "name": "Dyed Textured Solid — Terracotta · Swatch 071",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "terracotta"
+    ]
+  },
+  {
+    "index": 72,
+    "filename": "IMG_5609.jpeg",
+    "originalName": "IMG_5609.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Charcoal Grey",
+    "hex": "#65645f",
+    "name": "Dyed Textured Solid — Charcoal Grey · Swatch 072",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "charcoal grey"
+    ]
+  },
+  {
+    "index": 73,
+    "filename": "IMG_5611.jpeg",
+    "originalName": "IMG_5611.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Blue Grey",
+    "hex": "#767c90",
+    "name": "Dyed Textured Solid — Blue Grey · Swatch 073",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "blue grey"
+    ]
+  },
+  {
+    "index": 74,
+    "filename": "IMG_5612.jpeg",
+    "originalName": "IMG_5612.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Brick Red",
+    "hex": "#a55b5c",
+    "name": "Dyed Textured Solid — Brick Red · Swatch 074",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "brick red"
+    ]
+  },
+  {
+    "index": 75,
+    "filename": "IMG_5613.jpeg",
+    "originalName": "IMG_5613.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Stone Grey",
+    "hex": "#807772",
+    "name": "Dyed Textured Solid — Stone Grey · Swatch 075",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "stone grey"
+    ]
+  },
+  {
+    "index": 76,
+    "filename": "IMG_5614.jpeg",
+    "originalName": "IMG_5614.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Taupe",
+    "hex": "#a4907d",
+    "name": "Dyed Textured Solid — Taupe · Swatch 076",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "taupe"
+    ]
+  },
+  {
+    "index": 77,
+    "filename": "IMG_5615.jpeg",
+    "originalName": "IMG_5615.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Grey",
+    "hex": "#93908b",
+    "name": "Dyed Textured Solid — Grey · Swatch 077",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "grey"
+    ]
+  },
+  {
+    "index": 78,
+    "filename": "IMG_5616.jpeg",
+    "originalName": "IMG_5616.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Dusty Mauve",
+    "hex": "#8f7475",
+    "name": "Dyed Textured Solid — Dusty Mauve · Swatch 078",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "dusty mauve"
+    ]
+  },
+  {
+    "index": 79,
+    "filename": "IMG_5617.jpeg",
+    "originalName": "IMG_5617.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Wine Red",
+    "hex": "#af5f68",
+    "name": "Dyed Textured Solid — Wine Red · Swatch 079",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "wine red"
+    ]
+  },
+  {
+    "index": 80,
+    "filename": "IMG_5618.jpeg",
+    "originalName": "IMG_5618.jpeg",
+    "fabricType": "Dyed",
+    "designType": "Textured Solid",
+    "group": "solid",
+    "colorName": "Teal",
+    "hex": "#628687",
+    "name": "Dyed Textured Solid — Teal · Swatch 080",
+    "tags": [
+      "JKW Textiles",
+      "dyed",
+      "textured solid",
+      "teal"
+    ]
+  },
+  {
+    "index": 81,
+    "filename": "Pink Sq.png",
+    "originalName": "Pink Sq.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Gingham Check",
+    "group": "patterned",
+    "colorName": "Pink / White",
+    "hex": "#d2777e",
+    "name": "Yarn Dyed Gingham Check — Pink / White · Swatch 081",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "gingham check",
+      "pink / white"
+    ]
+  },
+  {
+    "index": 82,
+    "filename": "RED black sq.png",
+    "originalName": "RED black sq.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Buffalo Plaid",
+    "group": "patterned",
+    "colorName": "Red / Black",
+    "hex": "#6d1210",
+    "name": "Yarn Dyed Buffalo Plaid — Red / Black · Swatch 082",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "buffalo plaid",
+      "red / black"
+    ]
+  },
+  {
+    "index": 83,
+    "filename": "Red Stripe.png",
+    "originalName": "Red Stripe.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Red / Cream",
+    "hex": "#d07e75",
+    "name": "Yarn Dyed Horizontal Stripe — Red / Cream · Swatch 083",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal stripe",
+      "red / cream"
+    ]
+  },
+  {
+    "index": 84,
+    "filename": "Red and light red.png",
+    "originalName": "Red and light red.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Broad Stripe",
+    "group": "patterned",
+    "colorName": "Red / White",
+    "hex": "#f1b5aa",
+    "name": "Yarn Dyed Vertical Broad Stripe — Red / White · Swatch 084",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical broad stripe",
+      "red / white"
+    ]
+  },
+  {
+    "index": 85,
+    "filename": "Red black stripe.png",
+    "originalName": "Red black stripe.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Red / Black",
+    "hex": "#89090f",
+    "name": "Yarn Dyed Horizontal Stripe — Red / Black · Swatch 085",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal stripe",
+      "red / black"
+    ]
+  },
+  {
+    "index": 86,
+    "filename": "YD-BW-SSTR.png",
+    "originalName": "YD-BW-SSTR.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Pinstripe",
+    "group": "patterned",
+    "colorName": "Dusty Rose / White",
+    "hex": "#7c4545",
+    "name": "Yarn Dyed Horizontal Pinstripe — Dusty Rose / White · Swatch 086",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal pinstripe",
+      "dusty rose / white"
+    ]
+  },
+  {
+    "index": 87,
+    "filename": "black white sq.png",
+    "originalName": "black white sq.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Windowpane Check",
+    "group": "patterned",
+    "colorName": "Black / White",
+    "hex": "#121417",
+    "name": "Yarn Dyed Windowpane Check — Black / White · Swatch 087",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "windowpane check",
+      "black / white"
+    ]
+  },
+  {
+    "index": 88,
+    "filename": "black white.png",
+    "originalName": "black white.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Windowpane Check",
+    "group": "patterned",
+    "colorName": "Black / White",
+    "hex": "#121417",
+    "name": "Yarn Dyed Windowpane Check — Black / White · Swatch 088",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "windowpane check",
+      "black / white"
+    ]
+  },
+  {
+    "index": 89,
+    "filename": "blue red white.png",
+    "originalName": "blue red white.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Blue / Red / White",
+    "hex": "#bcb7b2",
+    "name": "Yarn Dyed Horizontal Multi-Stripe — Blue / Red / White · Swatch 089",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal multi-stripe",
+      "blue / red / white"
+    ]
+  },
+  {
+    "index": 90,
+    "filename": "brown black sq.png",
+    "originalName": "brown black sq.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Buffalo Plaid",
+    "group": "patterned",
+    "colorName": "Brown / Black",
+    "hex": "#725d59",
+    "name": "Yarn Dyed Buffalo Plaid — Brown / Black · Swatch 090",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "buffalo plaid",
+      "brown / black"
+    ]
+  },
+  {
+    "index": 91,
+    "filename": "c6f92f3e-a95a-445c-b728-ea1e95621d08.png",
+    "originalName": "c6f92f3e-a95a-445c-b728-ea1e95621d08.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Vertical Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Teal / Beige",
+    "hex": "#b69892",
+    "name": "Yarn Dyed Fine Vertical Multi-Stripe — Teal / Beige · Swatch 091",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine vertical multi-stripe",
+      "teal / beige"
+    ]
+  },
+  {
+    "index": 92,
+    "filename": "d2bce7b5-6465-4c9a-ab01-49943db42079.png",
+    "originalName": "d2bce7b5-6465-4c9a-ab01-49943db42079.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Pink / Blue",
+    "hex": "#ca8496",
+    "name": "Yarn Dyed Vertical Multi-Stripe — Pink / Blue · Swatch 092",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical multi-stripe",
+      "pink / blue"
+    ]
+  },
+  {
+    "index": 93,
+    "filename": "d70e8b78-9c0c-4b89-9294-1b57baf1d6aa.png",
+    "originalName": "d70e8b78-9c0c-4b89-9294-1b57baf1d6aa.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Fine Vertical Multi-Stripe",
+    "group": "patterned",
+    "colorName": "Beige / Brown",
+    "hex": "#d09e8c",
+    "name": "Yarn Dyed Fine Vertical Multi-Stripe — Beige / Brown · Swatch 093",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "fine vertical multi-stripe",
+      "beige / brown"
+    ]
+  },
+  {
+    "index": 94,
+    "filename": "d8bad436-6974-4d5c-8f40-0337ad2fa852.png",
+    "originalName": "d8bad436-6974-4d5c-8f40-0337ad2fa852.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Broad Stripe",
+    "group": "patterned",
+    "colorName": "Red / Burgundy",
+    "hex": "#e62d2e",
+    "name": "Yarn Dyed Vertical Broad Stripe — Red / Burgundy · Swatch 094",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical broad stripe",
+      "red / burgundy"
+    ]
+  },
+  {
+    "index": 95,
+    "filename": "file_0000000090947208a821dc645d91fafc CPY.png",
+    "originalName": "file_0000000090947208a821dc645d91fafc CPY.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Gingham Check",
+    "group": "patterned",
+    "colorName": "Mustard / Cream",
+    "hex": "#e0bd7b",
+    "name": "Yarn Dyed Gingham Check — Mustard / Cream · Swatch 095",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "gingham check",
+      "mustard / cream"
+    ]
+  },
+  {
+    "index": 96,
+    "filename": "file_00000000960472079e1ccdf4c41e0c0f.png",
+    "originalName": "file_00000000960472079e1ccdf4c41e0c0f.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Black / Cream",
+    "hex": "#998f85",
+    "name": "Yarn Dyed Horizontal Stripe — Black / Cream · Swatch 096",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal stripe",
+      "black / cream"
+    ]
+  },
+  {
+    "index": 97,
+    "filename": "file_00000000f708720895f59a27eb3d11fe CPY.png",
+    "originalName": "file_00000000f708720895f59a27eb3d11fe CPY.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Gingham Check",
+    "group": "patterned",
+    "colorName": "Blue / Cream",
+    "hex": "#8c8f97",
+    "name": "Yarn Dyed Gingham Check — Blue / Cream · Swatch 097",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "gingham check",
+      "blue / cream"
+    ]
+  },
+  {
+    "index": 98,
+    "filename": "teal chikoo.png",
+    "originalName": "teal chikoo.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Vertical Stripe",
+    "group": "patterned",
+    "colorName": "Teal / Beige",
+    "hex": "#ccb09a",
+    "name": "Yarn Dyed Vertical Stripe — Teal / Beige · Swatch 098",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "vertical stripe",
+      "teal / beige"
+    ]
+  },
+  {
+    "index": 99,
+    "filename": "turquoise stripe.png",
+    "originalName": "turquoise stripe.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Horizontal Stripe",
+    "group": "patterned",
+    "colorName": "Turquoise / White",
+    "hex": "#97b5aa",
+    "name": "Yarn Dyed Horizontal Stripe — Turquoise / White · Swatch 099",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "horizontal stripe",
+      "turquoise / white"
+    ]
+  },
+  {
+    "index": 100,
+    "filename": "yellow black sq.png",
+    "originalName": "yellow black sq.png",
+    "fabricType": "Yarn Dyed",
+    "designType": "Buffalo Plaid",
+    "group": "patterned",
+    "colorName": "Yellow / Black",
+    "hex": "#8a7137",
+    "name": "Yarn Dyed Buffalo Plaid — Yellow / Black · Swatch 100",
+    "tags": [
+      "JKW Textiles",
+      "yarn dyed",
+      "buffalo plaid",
+      "yellow / black"
+    ]
+  }
+]

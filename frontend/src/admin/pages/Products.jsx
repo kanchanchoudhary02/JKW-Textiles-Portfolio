@@ -7,7 +7,7 @@ import AdminLayout from '../components/AdminLayout'
 import ConfirmModal from '../components/ConfirmModal'
 import Toast from '../components/Toast'
 
-const CATEGORIES = ['All', 'Cotton', 'Linen', 'Rayon', 'Blended', 'Printed', 'Dyed', 'Yarn Dyed', 'Other']
+const CATEGORIES = ['All', 'Cotton', 'Linen', 'Rayon', 'Blended', 'Printed', 'Dyed', 'Yarn Dyed', 'Dobby / Schiffli/Jacquard', 'Dobby / Schiffli', 'Other']
 const STATUSES = ['All', 'active', 'inactive']
 const FILE_ORIGIN = API_BASE_URL.replace(/\/api\/?$/, '')
 

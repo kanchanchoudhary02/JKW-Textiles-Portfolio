@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const { PRODUCT_CATEGORIES } = require('../constants/productCategories');
 
 const colorSchema = new mongoose.Schema(
   {
@@ -22,7 +23,7 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ['Greige', 'Yarn Dyed', 'Dobby / Schiffli', 'Dyed', 'Printed', 'Cotton', 'Linen', 'Rayon', 'Blended', 'Other'],
+      enum: PRODUCT_CATEGORIES,
     },
     subcategory: { type: String, trim: true, default: '' },
     spec: { type: String, trim: true, default: '' },
